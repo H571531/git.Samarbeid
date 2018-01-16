@@ -66,5 +66,6 @@ public class CD {
 		return String.format("%-12s: %d \n%-12s: %s \n%-12s: %s \n%-12s: %d \n%-12s: %s \n%-12s: %s\n", "CD-nummer", cdNummer, "Artist", cdArtist,
 				"Tittel", cdTittel, "Utgitt", cdLansering, "Sjanger", cdSjanger.toString(), "Plateselskap", plateselskap);
 	}
+	//tester branch
 	
 }

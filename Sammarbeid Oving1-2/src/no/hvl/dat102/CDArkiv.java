@@ -11,6 +11,7 @@ public class CDarkiv implements CDArkivADT {
 	public CDarkiv() {
 		this(STANDARD_KAPASITET);
 	}
+	
 	public CDarkiv(int storrelse) {
 		this.arkiv = new CD[storrelse];
 		antall = 0;
@@ -23,6 +24,42 @@ public class CDarkiv implements CDArkivADT {
 		}
 		arkiv[antall] = cd;
 		antall++;
+	}
+	
+	@Override
+	public boolean slettCD(int CDNummer) {
+		
+		//finnCDMedNummer() returnerer -1 hvis CD ikke finnes i arkiv
+		int index = finnCDMedNummer(CDNummer);
+		if(index == -1) {
+			return false;
+		}
+		
+		antall--;
+		arkiv[index] = arkiv[antall];
+		arkiv[antall] = null;
+		return true;
+		
+	}
+	
+	/**
+	 * Gir index i CD[] arkiv til CD med cdNummer CDNummer
+	 * @param CDNummer
+	 * @return index i arkiv til rett CD, -1 hvis CD ikke finnes
+	 */
+	private int finnCDMedNummer(int CDNummer) {
+		
+		int ut = -1;
+		int i = 0;
+		
+		while(i < antall && ut <0) {
+			if(arkiv[i].getCdNummer() == CDNummer) {
+				return i;
+			} else {
+				i++;
+			}
+		}
+		return ut;
 	}
 	
 }

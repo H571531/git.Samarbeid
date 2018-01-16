@@ -19,6 +19,7 @@ public class Tekstgrensesnitt {
 		System.out.println("Skriv inn sjanger");
 		Sjanger sjanger = Sjanger.finnSjanger(sc.nextLine());
 		sc.close();
+		//hei
 	}
 	
 	public void visCD(CD cd) {

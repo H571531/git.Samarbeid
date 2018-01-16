@@ -64,5 +64,6 @@ public class CD {
 		return "CD [cdNummer=" + cdNummer + ", cdArtist=" + cdArtist + ", cdTittel=" + cdTittel + ", cdLansering="
 				+ cdLansering + ", cdSjanger=" + cdSjanger + "]";
 	}
+	//tester branch
 	
 }

@@ -1,3 +1,4 @@
+package no.hvl.dat102;
 
 import no.hvl.dat102.adt.CDArkivADT;
 import java.util.Scanner;
@@ -24,13 +25,7 @@ public class Tekstgrensesnitt {
 		return ny;
 	}
 	
-	public void visCD(CD cd) {
-		
-	}
 	
-	public void skrivUtCdDelstrengITittel(CDArkivADT cda, String delstreng) {
-		
-	}
 	
 	public void skrivUtCdArtist(CDArkivADT cda, String delstreng) {
 				CD[] funnet = new CD[cda.getAntall()];
@@ -77,5 +72,5 @@ public class Tekstgrensesnitt {
 				System.out.println("---------");
 			}
 		}
-
+	}
 }

@@ -39,7 +39,12 @@ public class Meny {
 			case 2:
 				arkiv = new CDArkiv();
 				break;
+			case 0:
+				System.exit(0);
+				break;
 			}
+			
+			
 			
 			
 			

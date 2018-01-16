@@ -31,7 +31,12 @@ public class Tekstgrensesnitt {
 	}
 	
 	public void skrivUtCdArtist(CDArkivADT cda, String delstreng) {
-		
+				CD[] funnet = new CD[cda.getAntall()];
+				funnet=cda.sokArtist(delstreng);
+				
+				for(int i=0; i<funnet.length; i++) {
+					System.out.println(funnet[i].toString());
+				}
 	}
 	
 	public void skrivUtStatistikk(CDArkivADT cda) {

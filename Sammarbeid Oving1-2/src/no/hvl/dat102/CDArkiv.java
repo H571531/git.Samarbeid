@@ -1,18 +1,18 @@
 package no.hvl.dat102;
 import no.hvl.dat102.adt.CDArkivADT;
 
-public class CDarkiv implements CDArkivADT {
+public class CDArkiv implements CDArkivADT {
 	
 	private final static int STANDARD_KAPASITET = 100;
 	
 	private CD[] arkiv;
 	int antall;
 	
-	public CDarkiv() {
+	public CDArkiv() {
 		this(STANDARD_KAPASITET);
 	}
 	
-	public CDarkiv(int storrelse) {
+	public CDArkiv(int storrelse) {
 		this.arkiv = new CD[storrelse];
 		antall = 0;
 	}
@@ -99,6 +99,20 @@ public class CDarkiv implements CDArkivADT {
 		int antFunnet = 0;
 		for(int i = 0; i < this.antall; i++) {
 			if(this.arkiv[i].getCdTittel().contains(delnavn)) {
+				funnet[antFunnet] = this.arkiv[i];
+				antFunnet++;
+			}
+		}
+		funnet = trimTab(funnet, antFunnet);
+		return funnet;
+	}
+	
+	@Override
+	public CD[] sokArtist(String artist) {
+		CD[] funnet = new CD[this.antall];
+		int antFunnet = 0;
+		for(int i = 0; i < this.antall; i++) {
+			if(this.arkiv[i].getCdArtist().contains(artist)) {
 				funnet[antFunnet] = this.arkiv[i];
 				antFunnet++;
 			}

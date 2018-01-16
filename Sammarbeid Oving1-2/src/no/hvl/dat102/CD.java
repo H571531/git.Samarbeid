@@ -6,17 +6,19 @@ public class CD {
 	private String cdTittel;
 	private int cdLansering;
 	private Sjanger cdSjanger;
+	private String plateselskap;
 	
 	public CD() {
-		this(0,null,null,0,null);
+		this(0,null,null,0,null, null);
 		}
 
-	public CD(int cdNummer,String cdArtist, String cdTittel,int cdLansering, Sjanger cdSjanger) {
+	public CD(int cdNummer,String cdArtist, String cdTittel,int cdLansering, Sjanger cdSjanger, String plateselskap) {
 		this.cdNummer=cdNummer;
 		this.cdArtist=cdArtist;
 		this.cdTittel=cdTittel;
 		this.cdLansering=cdLansering;
 		this.cdSjanger=cdSjanger;	
+		this.plateselskap = plateselskap;
 	}
 
 	public int getCdNummer() {
@@ -61,8 +63,8 @@ public class CD {
 
 	@Override
 	public String toString() {
-		return "CD [cdNummer=" + cdNummer + ", cdArtist=" + cdArtist + ", cdTittel=" + cdTittel + ", cdLansering="
-				+ cdLansering + ", cdSjanger=" + cdSjanger + "]";
+		return String.format("%-12s: %d \n%-12s: %s \n%-12s: %s \n%-12s: %d \n%-12s: %s \n%-12s: %s\n", "CD-nummer", cdNummer, "Artist", cdArtist,
+				"Tittel", cdTittel, "Utgitt", cdLansering, "Sjanger", cdSjanger.toString(), "Plateselskap", plateselskap);
 	}
 	//tester branch
 	

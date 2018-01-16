@@ -22,7 +22,7 @@ public class Fil {
   * @return Referansen til CD-arkivet
   * @throws java.io.IOException
   */
- public CDArkivADT lesFraFil(String filnavn)  {
+ public static CDArkivADT lesFraFil(String filnavn)  {
 
   CDArkivADT cda = null;
 
@@ -33,7 +33,7 @@ public class Fil {
    // 2 - BufferedReader
    BufferedReader innfil = new BufferedReader(ansFil);
 
-   // 3 - Leser den første posten som er antall info-poster
+   // 3 - Leser den fï¿½rste posten som er antall info-poster
    String linje = innfil.readLine();
    int n = Integer.parseInt(linje);
 
@@ -59,7 +59,7 @@ public class Fil {
    innfil.close();
 
   } 
-  catch (FileNotFoundException unntak) {//arver fra IOException må stå først
+  catch (FileNotFoundException unntak) {//arver fra IOException mï¿½ stï¿½ fï¿½rst
                                         // hvis ikke vil unntaket for IOException skygge
    System.out.println("Finner ikke filen " + filnavn);
    System.exit(1);
@@ -72,7 +72,7 @@ public class Fil {
   return cda;
  }
 
- public void skrivTilFil(CDArkivADT cdarkiv, String filnavn, boolean utvid){
+ public static void skrivTilFil(CDArkivADT cdarkiv, String filnavn){
 	 try {
          // 1 - FileWriter
          FileWriter ansFil = new FileWriter(filnavn, false);
@@ -80,11 +80,11 @@ public class Fil {
          // 2 - PrintWriter
          PrintWriter utfil = new PrintWriter(ansFil);
          
-         //3 - Skriver først ut antall ansatt-info-er på den første linjen            
+         //3 - Skriver fï¿½rst ut antall ansatt-info-er pï¿½ den fï¿½rste linjen            
          utfil.println(cdarkiv.getAntall());
          
-         // Hvis vi tar imot en tabell av ansatte, ville vi her lage en løkke der
-         // vi for hver ansatt henter ut feltvariable og skriver de ut på samme linje
+         // Hvis vi tar imot en tabell av ansatte, ville vi her lage en lï¿½kke der
+         // vi for hver ansatt henter ut feltvariable og skriver de ut pï¿½ samme linje
          
          // 3 - Skriv postene, felt for felt
          CD[] tabell=cdarkiv.getCDTabell();

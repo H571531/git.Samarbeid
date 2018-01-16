@@ -27,7 +27,7 @@ public class Tekstgrensesnitt {
 	
 	
 	
-	public void skrivUtCdArtist(CDArkivADT cda, String delstreng) {
+	public static void skrivUtCdArtist(CDArkivADT cda, String delstreng) {
 				CD[] funnet = new CD[cda.getAntall()];
 				funnet=cda.sokArtist(delstreng);
 				
@@ -36,7 +36,7 @@ public class Tekstgrensesnitt {
 				}
 	}
 	
-	public void skrivUtStatistikk(CDArkivADT cda) {
+	public static void skrivUtStatistikk(CDArkivADT cda) {
 		int antall = cda.getAntall();
 		System.out.println("Statistikk :");
 		System.out.println("Det er totalt " + antall + " CD'er i arkivet");
@@ -72,5 +72,10 @@ public class Tekstgrensesnitt {
 				System.out.println("---------");
 			}
 		}
+	}
+	
+	public static void skrivUtArkiv(CDArkivADT arkiv) {
+		System.out.println("Viser arkiv:");
+		System.out.println(arkiv);
 	}
 }

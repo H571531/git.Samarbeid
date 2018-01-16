@@ -31,7 +31,7 @@ public class Tekstgrensesnitt {
 				System.out.println("---------");
 			}
 		}
-		
+		//.
 	}
 
 	

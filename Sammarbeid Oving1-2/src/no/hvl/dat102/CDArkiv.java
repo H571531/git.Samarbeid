@@ -24,5 +24,31 @@ public class CDarkiv implements CDArkivADT {
 		arkiv[antall] = cd;
 		antall++;
 	}
+
+	private void utvid() {
+		CD[] hjelpetabell = new CD[(int)Math.ceil(1.1 * arkiv.length)];
+		for(int i=0; i<arkiv.length; i++) {
+			hjelpetabell[i]=arkiv[i];
+		}
+		arkiv=hjelpetabell;
+	}
+	
+	@Override
+	public int getAntall() {
+		return antall;
+	}
+	@Override
+	public int getAntall(Sjanger sj) {
+		int teller=0;
+		for(int i=0; i<antall; i++) {
+			if(arkiv[i].getCdSjanger().equals(sj)) {
+				teller++;
+			}
+		}
+		return teller;
+	}
+	
+	
+	
 	
 }

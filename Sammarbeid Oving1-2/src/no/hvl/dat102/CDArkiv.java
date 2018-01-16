@@ -103,6 +103,13 @@ public class CDArkiv implements CDArkivADT {
 				antFunnet++;
 			}
 		}
+
+		
+		if(antFunnet == 0) {
+			return null;
+		}
+		
+
 		funnet = trimTab(funnet, antFunnet);
 		return funnet;
 	}
@@ -117,6 +124,12 @@ public class CDArkiv implements CDArkivADT {
 				antFunnet++;
 			}
 		}
+
+		
+		if(antFunnet == 0) {
+			return null;
+		}
+
 		funnet = trimTab(funnet, antFunnet);
 		return funnet;
 	}

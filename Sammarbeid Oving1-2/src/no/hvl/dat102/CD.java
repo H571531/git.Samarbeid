@@ -25,6 +25,14 @@ public class CD {
 		return cdNummer;
 	}
 
+	public String getPlateselskap() {
+		return plateselskap;
+	}
+
+	public void setPlateselskap(String plateselskap) {
+		this.plateselskap = plateselskap;
+	}
+
 	public void setCdNummer(int cdNummer) {
 		this.cdNummer = cdNummer;
 	}

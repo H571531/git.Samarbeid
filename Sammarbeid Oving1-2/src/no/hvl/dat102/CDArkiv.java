@@ -52,6 +52,6 @@ public class CDarkiv implements CDArkivADT {
 			i++;
 		}
 		return cdtab2;
-		// Kristoffer er kul
+		// Kristoffer er kul og rebell
 	}
 }

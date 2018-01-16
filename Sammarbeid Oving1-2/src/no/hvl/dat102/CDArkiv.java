@@ -52,5 +52,6 @@ public class CDarkiv implements CDArkivADT {
 			i++;
 		}
 		return cdtab2;
+		// Kristoffer
 	}
 }

@@ -1,20 +1,25 @@
 package no.hvl.dat102;
 import no.hvl.dat102.adt.CDArkivADT;
 
-public class CDarkiv implements CDArkivADT {
+public class CDArkiv implements CDArkivADT {
 	
 	private final static int STANDARD_KAPASITET = 100;
 	
 	private CD[] arkiv;
 	int antall;
 	
-	public CDarkiv() {
+	public CDArkiv() {
 		this(STANDARD_KAPASITET);
 	}
 	
-	public CDarkiv(int storrelse) {
+	public CDArkiv(int storrelse) {
 		this.arkiv = new CD[storrelse];
 		antall = 0;
+	}
+	
+	@Override
+	public CD[] getCDTabell() {
+		return this.arkiv;
 	}
 	
 	@Override
@@ -25,6 +30,32 @@ public class CDarkiv implements CDArkivADT {
 		arkiv[antall] = cd;
 		antall++;
 	}
+
+	private void utvid() {
+		CD[] hjelpetabell = new CD[(int)Math.ceil(1.1 * arkiv.length)];
+		for(int i=0; i<arkiv.length; i++) {
+			hjelpetabell[i]=arkiv[i];
+		}
+		arkiv=hjelpetabell;
+	}
+	
+	@Override
+	public int getAntall() {
+		return antall;
+	}
+	@Override
+	public int getAntall(Sjanger sj) {
+		int teller=0;
+		for(int i=0; i<antall; i++) {
+			if(arkiv[i].getCdSjanger().equals(sj)) {
+				teller++;
+			}
+		}
+		return teller;
+	}
+	
+	
+	
 	
 	@Override
 	public boolean slettCD(int CDNummer) {
@@ -62,4 +93,42 @@ public class CDarkiv implements CDArkivADT {
 		return ut;
 	}
 	
+	@Override
+	public CD[] sokTittel(String delnavn) {
+		CD[] funnet = new CD[this.antall];
+		int antFunnet = 0;
+		for(int i = 0; i < this.antall; i++) {
+			if(this.arkiv[i].getCdTittel().contains(delnavn)) {
+				funnet[antFunnet] = this.arkiv[i];
+				antFunnet++;
+			}
+		}
+		funnet = trimTab(funnet, antFunnet);
+		return funnet;
+	}
+	
+	@Override
+	public CD[] sokArtist(String artist) {
+		CD[] funnet = new CD[this.antall];
+		int antFunnet = 0;
+		for(int i = 0; i < this.antall; i++) {
+			if(this.arkiv[i].getCdArtist().contains(artist)) {
+				funnet[antFunnet] = this.arkiv[i];
+				antFunnet++;
+			}
+		}
+		funnet = trimTab(funnet, antFunnet);
+		return funnet;
+	}
+	
+	private CD[] trimTab(CD[] tab, int n) {
+		CD[] cdtab2 = new CD[n];
+		int i = 0;
+		while (i < n) {
+			cdtab2[i] = tab[i];
+			i++;
+		}
+		return cdtab2;
+		// Kristoffer er kul og rebell
+	}
 }

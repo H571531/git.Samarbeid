@@ -61,8 +61,8 @@ public class CD {
 
 	@Override
 	public String toString() {
-		return "CD [cdNummer=" + cdNummer + ", cdArtist=" + cdArtist + ", cdTittel=" + cdTittel + ", cdLansering="
-				+ cdLansering + ", cdSjanger=" + cdSjanger + "]";
+		return String.format("%-12s: %d \n%-12s: %s \n%-12s: %s \n%-12s: %d \n%-12s: %s \n%-12s: %s\n", "CD-nummer", CDNummer, "Artist", artist,
+				"Tittel", cdTittel, "Utgitt", cdLansering, "Sjanger", cdSjanger.toString(), "Plateselskap", plateselskap);
 	}
 	
 }

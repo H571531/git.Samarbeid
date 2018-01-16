@@ -144,4 +144,12 @@ public class CDArkiv implements CDArkivADT {
 		return cdtab2;
 		// Kristoffer er kul og rebell
 	}
+	
+	public String toString() {
+		String ut = "";
+		for(CD cd : arkiv) {
+			ut += cd;
+		}
+		return ut;
+	}
 }

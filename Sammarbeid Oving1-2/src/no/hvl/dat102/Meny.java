@@ -36,14 +36,14 @@ public class Meny {
 				} while(arkiv == null && valg != 0);
 				
 				break;
-			}
-			/*
 			case 2:
 				arkiv = new CDArkiv();
-				arkivKlart();
 				break;
 			}
-			*/
+			
+			
+			
+			
 			
 		} while(valg != 0 && arkiv == null);
 		

@@ -9,19 +9,19 @@ public class Tekstgrensesnitt {
 	public static CD lesCD() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Skriv inn CD-Nummer");
-		int nummerInn = Integer.parseInt(sc.nextLine());
+		int nummerInn = Integer.parseInt(sc.next());
 		System.out.println("Skriv inn artist-navn eller gruppe");
-		String navnInn = sc.nextLine();
+		String navnInn = sc.next();
 		System.out.println("Skriv inn tittel");
-		String tittelInn = sc.nextLine();
+		String tittelInn = sc.next();
 		System.out.println("Skriv inn utgivelsesår (int)");
 		int utAar = sc.nextInt();
 		System.out.println("Skriv inn sjanger");
-		Sjanger sjanger = Sjanger.finnSjanger(sc.nextLine());
+		Sjanger sjanger = Sjanger.finnSjanger(sc.next());
 		System.out.println("Skriv inn plateselskap");
-		String selskapInn = sc.nextLine();
+		String selskapInn = sc.next();
 		CD ny = new CD(nummerInn, navnInn, tittelInn, utAar, sjanger, selskapInn);
-		sc.close();
+		//sc.close();
 		return ny;
 	}
 	

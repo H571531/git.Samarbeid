@@ -14,8 +14,18 @@ public class Tekstgrensesnitt {
 		String navnInn = sc.next();
 		System.out.println("Skriv inn tittel");
 		String tittelInn = sc.next();
-		System.out.println("Skriv inn utgivelsesår (int)");
-		int utAar = sc.nextInt();
+		
+		int utAar = 0;
+		do {
+			//CDer ble lansert i 1982
+			System.out.println("Skriv inn utgivelsesår (int)");
+			utAar = sc.nextInt();
+			
+			if(utAar < 1982) {
+				System.out.println("Kan ikke være utgitt før 1982");
+			}
+		} while(utAar < 1982);
+		
 		System.out.println("Skriv inn sjanger");
 		Sjanger sjanger = Sjanger.finnSjanger(sc.next());
 		System.out.println("Skriv inn plateselskap");

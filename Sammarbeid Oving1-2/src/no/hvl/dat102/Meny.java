@@ -91,7 +91,6 @@ public class Meny {
 				Tekstgrensesnitt.skrivUtStatistikk(arkiv);
 				break;
 			case 5:
-				System.out.println("Viser arkiv: ");
 				Tekstgrensesnitt.skrivUtArkiv(arkiv);
 				break;
 			case 6:

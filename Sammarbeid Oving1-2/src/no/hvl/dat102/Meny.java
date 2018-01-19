@@ -26,13 +26,16 @@ public class Meny {
 				
 				
 				do {
-					System.out.println("Skriv filnavn, 0 for å gå tilbake: ");
-					String valgFil = inn.nextLine();
-					arkiv = Fil.lesFraFil(inn.nextLine());
+					System.out.println("Skriv filnavn");
+					String valgFil = inn.next();
+					/*
 					if(valgFil.equals("0")) {
-						inn.close();
-						break;
+						//inn.close();
+						continue;
 					}
+					*/
+					arkiv = Fil.lesFraFil(valgFil);
+					
 				} while(arkiv == null && valg != 0);
 				
 				break;
@@ -40,6 +43,7 @@ public class Meny {
 				arkiv = new CDArkiv();
 				break;
 			case 0:
+				inn.close();
 				System.exit(0);
 				break;
 			}
@@ -68,11 +72,11 @@ public class Meny {
 			
 			switch(valg) {
 			case 0:
+				inn.close();
 				System.exit(0);
 				break;
 			case 1:
 				arkiv.leggTilCD(Tekstgrensesnitt.lesCD());
-				//Tekstgrensesnitt.skrivArkiv(arkiv);
 				break;
 			case 2:
 				

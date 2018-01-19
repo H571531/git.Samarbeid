@@ -1,10 +1,10 @@
 package no.hvl.dat102;
 
 public enum Sjanger {
-	ROCK(1), POP(2), OPERA(3), JAZZ(4), KLASSISK(5);
+	ROCK(1), POP(2), OPERA(3), JAZZ(4), KLASSISK(5), ANNET(6);
 	private int nr;
 
-	private Sjanger(int n) { // Konstruktør
+	private Sjanger(int n) { // Konstruktï¿½r
 		this.nr = n;
 	}
 
@@ -20,6 +20,10 @@ public enum Sjanger {
 				break;
 			}
 		}
+		//Hvis sjanger ikke matcher noe, sett sjanger til ANNET
+		if(sjang == null) {
+			sjang = ANNET;
+		}
 		return sjang;
 	}// metode
 
@@ -30,6 +34,10 @@ public enum Sjanger {
 				sjang = sj;
 				break;
 			}
+		}
+		//Hvis sjanger ikke matcher noe, sett sjanger til ANNET
+		if(sjang == null) {
+			sjang = ANNET;
 		}
 		return sjang;
 	}// metode

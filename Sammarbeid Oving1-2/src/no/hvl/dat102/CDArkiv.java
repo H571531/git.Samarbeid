@@ -142,7 +142,7 @@ public class CDArkiv implements CDArkivADT {
 			i++;
 		}
 		return cdtab2;
-		// Kristoffer er kul og rebell
+		
 	}
 	
 	public String toString() {

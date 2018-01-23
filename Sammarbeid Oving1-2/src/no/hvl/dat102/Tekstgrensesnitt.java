@@ -88,4 +88,13 @@ public class Tekstgrensesnitt {
 		System.out.println("Viser arkiv:");
 		System.out.println(arkiv);
 	}
+	
+	public static void slettCD(CDArkivADT arkiv, int cdNummer) {
+		boolean slettet = arkiv.slettCD(cdNummer);
+		if(!slettet) {
+			System.out.println("Finner ikke CD med CD-nummer: " + cdNummer);
+		} else {
+			System.out.println("Slettet CD med CD-Nummer: " + cdNummer);
+		}
+	}
 }

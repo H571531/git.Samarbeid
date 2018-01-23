@@ -64,9 +64,10 @@ public class Meny {
 			System.out.println("1. Legg til ny CD");
 			System.out.println("2. Søk etter tittel");
 			System.out.println("3. Søk etter artist");
-			System.out.println("4. Vis statistikk");
-			System.out.println("5. Vis arkiv");
-			System.out.println("6. Lagre arkiv til fil");
+			System.out.println("4. Slett CD");
+			System.out.println("5. Vis statistikk");
+			System.out.println("6. Vis arkiv");
+			System.out.println("7. Lagre arkiv til fil");
 			
 			System.out.println("0. Avslutt");
 			valg = inn.nextInt();
@@ -92,12 +93,18 @@ public class Meny {
 				Tekstgrensesnitt.skrivUtCdArtist(arkiv, sok);
 				break;
 			case 4:
-				Tekstgrensesnitt.skrivUtStatistikk(arkiv);
+				System.out.println("Slett artist");
+				System.out.println("Skriv CD-Nummer til CD som skal slettes: ");
+				sok = inn.next();
+				Tekstgrensesnitt.slettCD(arkiv, Integer.parseInt(sok));
 				break;
 			case 5:
-				Tekstgrensesnitt.skrivUtArkiv(arkiv);
+				Tekstgrensesnitt.skrivUtStatistikk(arkiv);
 				break;
 			case 6:
+				Tekstgrensesnitt.skrivUtArkiv(arkiv);
+				break;
+			case 7:
 				System.out.println("Lagrer, skriv filnavn: ");
 				Fil.skrivTilFil(arkiv, inn.next());
 				break;

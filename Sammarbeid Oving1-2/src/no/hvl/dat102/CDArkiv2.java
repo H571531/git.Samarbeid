@@ -14,14 +14,21 @@ public class CDArkiv2 implements CDArkivADT {
 
 	@Override
 	public CD[] getCDTabell() {
-		// TODO Auto-generated method stub
-		return null;
+		CD[] CDTabell=new CD[antall];
+		LinearNode<CD> denne = start;
+		for(int i=0;denne!=null && i<antall; i++){
+			CDTabell[i]=denne.getElement();
+			denne=denne.getNeste();
+		}
+		return CDTabell;
 	}
 
 	@Override
 	public void leggTilCD(CD nyCd) {
-		// TODO Auto-generated method stub
-		
+		LinearNode<CD> nyCD = new LinearNode<CD>(nyCd);
+		nyCD.setNeste(start);
+		start = nyCD;
+		antall++;
 	}
 
 	@Override
@@ -102,13 +109,13 @@ public class CDArkiv2 implements CDArkivADT {
 	@Override
 	public CD[] sokArtist(String artist) {
 		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public int getAntall() {
-		// TODO Auto-generated method stub
-		return 0;
+		return antall;
 	}
 
 	@Override

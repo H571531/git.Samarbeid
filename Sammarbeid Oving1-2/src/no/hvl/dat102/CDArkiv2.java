@@ -94,6 +94,9 @@ public class CDArkiv2 implements CDArkivADT {
 			if(denne.getElement().getCdTittel().contains(delAvTittel)) {
 				ut[antallFunnet] = denne.getElement();
 				antallFunnet++;
+				denne = denne.getNeste();
+			} else {
+				denne = denne.getNeste();
 			}
 		}
 		
@@ -115,13 +118,26 @@ public class CDArkiv2 implements CDArkivADT {
 
 	@Override
 	public int getAntall() {
+
 		return antall;
 	}
 
 	@Override
 	public int getAntall(Sjanger sjanger) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		int antallFunnet = 0;
+		LinearNode<CD> denne = start;
+		
+		while(denne != null) {
+			if(denne.getElement().getCdSjanger().equals(sjanger)) {
+				antallFunnet++;
+				denne = denne.getNeste();
+			} else {
+				denne = denne.getNeste();
+			}
+		}
+		
+		return antallFunnet;
 	}
 
 }

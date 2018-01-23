@@ -93,9 +93,10 @@ public class Fil {
         	 utfil.print(tabell[i].getCdNummer()); utfil.print(SKILLE);
         	 utfil.print(tabell[i].getCdArtist()); utfil.print(SKILLE);
         	 utfil.print(tabell[i].getCdTittel()); utfil.print(SKILLE);
-        	 utfil.print(tabell[i].getCdLansering()); utfil.println(SKILLE);
+        	 utfil.print(tabell[i].getCdLansering()); utfil.print(SKILLE);
         	 utfil.print(tabell[i].getCdSjanger()); utfil.print(SKILLE);
-        	 utfil.print(tabell[i].getPlateselskap()); utfil.print(SKILLE);
+        	 utfil.print(tabell[i].getPlateselskap());
+        	 utfil.println();
          }
          utfil.close();
 	 }catch(Exception e) {

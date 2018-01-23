@@ -27,13 +27,15 @@ public class Meny {
 				
 				do {
 					System.out.println("Skriv filnavn");
+					
+					
 					String valgFil = inn.next();
-					/*
 					if(valgFil.equals("0")) {
-						//inn.close();
-						continue;
+						inn.close();
+						return;
 					}
-					*/
+					
+					
 					arkiv = Fil.lesFraFil(valgFil);
 					
 				} while(arkiv == null && valg != 0);
@@ -44,8 +46,7 @@ public class Meny {
 				break;
 			case 0:
 				inn.close();
-				System.exit(0);
-				break;
+				return;
 			}
 			
 			
@@ -73,8 +74,7 @@ public class Meny {
 			switch(valg) {
 			case 0:
 				inn.close();
-				System.exit(0);
-				break;
+				return;
 			case 1:
 				arkiv.leggTilCD(Tekstgrensesnitt.lesCD());
 				break;

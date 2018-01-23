@@ -144,7 +144,8 @@ public class CDArkiv implements CDArkivADT {
 		return cdtab2;
 		
 	}
-	
+	//Ny push
+	@Override
 	public String toString() {
 		String ut = "";
 		for(CD cd : arkiv) {

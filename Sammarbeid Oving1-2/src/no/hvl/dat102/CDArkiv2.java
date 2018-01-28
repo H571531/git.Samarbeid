@@ -112,8 +112,25 @@ public class CDArkiv2 implements CDArkivADT {
 	@Override
 	public CD[] sokArtist(String artist) {
 		// TODO Auto-generated method stub
+		CD[] ut = new CD[antall];
+		int antallFunnet = 0;
+		LinearNode<CD> denne = start;
 		
-		return null;
+		while(denne != null) {
+			if(denne.getElement().getCdArtist().contains(artist)) {
+				ut[antallFunnet] = denne.getElement();
+				antallFunnet++;
+				denne = denne.getNeste();
+			} else {
+				denne = denne.getNeste();
+			}
+		}
+		
+		if(antallFunnet == 0) {
+			return null;
+		}
+		
+		return trimTab(ut, antallFunnet);
 	}
 
 	@Override

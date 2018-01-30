@@ -6,20 +6,20 @@ import java.util.Scanner;
 
 public class Tekstgrensesnitt {
 	
-	public static CD lesCD() {
-		Scanner sc = new Scanner(System.in);
+	public static CD lesCD(Scanner inn) {
+		//Tar inn et Scanner-objekt som parameter, slik at det ikke må skapes et nytt objekt som aldri lukkes,
 		System.out.println("Skriv inn CD-Nummer");
-		int nummerInn = Integer.parseInt(sc.next());
+		int nummerInn = Integer.parseInt(inn.next());
 		System.out.println("Skriv inn artist-navn eller gruppe");
-		String navnInn = sc.next();
+		String navnInn = inn.next();
 		System.out.println("Skriv inn tittel");
-		String tittelInn = sc.next();
+		String tittelInn = inn.next();
 		
 		int utAar = 0;
 		do {
 			//CDer ble lansert i 1982
 			System.out.println("Skriv inn utgivelsesår (int)");
-			utAar = sc.nextInt();
+			utAar = inn.nextInt();
 			
 			if(utAar < 1982) {
 				System.out.println("Kan ikke være utgitt før 1982");
@@ -27,11 +27,10 @@ public class Tekstgrensesnitt {
 		} while(utAar < 1982);
 		
 		System.out.println("Skriv inn sjanger");
-		Sjanger sjanger = Sjanger.finnSjanger(sc.next());
+		Sjanger sjanger = Sjanger.finnSjanger(inn.next());
 		System.out.println("Skriv inn plateselskap");
-		String selskapInn = sc.next();
+		String selskapInn = inn.next();
 		CD ny = new CD(nummerInn, navnInn, tittelInn, utAar, sjanger, selskapInn);
-		//sc.close();
 		return ny;
 	}
 	

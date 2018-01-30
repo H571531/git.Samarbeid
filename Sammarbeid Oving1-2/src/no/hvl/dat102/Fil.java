@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 import no.hvl.dat102.adt.*;
 
 /**
- * @author Adrian M.
+ * Les inn CDArkiv fra .txt-fil, eller lagre et CDArkiv til en .txt-fil
  * 
  */
 public class Fil {

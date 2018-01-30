@@ -1,0 +1,5 @@
+4
+123141#artist3#tittel3#1999#ANNET#plateselskap3
+12341#Artist2#Tittel2#1990#POP#Plateselskap2
+1234#artist1#tittel1#1999#POP#plateselakp1
+18731#Artist5#Tittel5#2015#POP#Plateselskap5

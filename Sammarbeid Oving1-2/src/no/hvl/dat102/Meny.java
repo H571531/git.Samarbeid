@@ -8,6 +8,7 @@ public class Meny {
 	
 	private Scanner inn = new Scanner(System.in);
 	private CDArkivADT arkiv;
+	private final String DEFAULT_FIL = "CDArkiv.txt";
 	
 	public void start() {
 		int valg = -1;
@@ -38,7 +39,7 @@ public class Meny {
 				
 				break;
 			case 2:
-				arkiv = new CDArkiv();
+				arkiv = new CDArkiv2();
 				break;
 			case 0:
 				inn.close();
@@ -58,7 +59,7 @@ public class Meny {
 			System.out.println("4. Slett CD");
 			System.out.println("5. Vis statistikk");
 			System.out.println("6. Vis arkiv");
-			System.out.println("7. Lagre arkiv til fil");
+			System.out.println("7. Lagre arkiv til ny fil");
 			
 			System.out.println("0. Avslutt");
 			valg = inn.nextInt();
@@ -66,6 +67,8 @@ public class Meny {
 			switch(valg) {
 			case 0:
 				inn.close();
+				System.out.println("Avslutter - Lagrer til " + DEFAULT_FIL);
+				Fil.skrivTilFil(arkiv, DEFAULT_FIL);
 				return;
 			case 1:
 				arkiv.leggTilCD(Tekstgrensesnitt.lesCD(inn));
@@ -96,10 +99,11 @@ public class Meny {
 				Tekstgrensesnitt.skrivUtArkiv(arkiv);
 				break;
 			case 7:
-				System.out.println("Lagrer, skriv filnavn: ");
+				System.out.println("Lagrer, skriv nytt filnavn: ");
 				Fil.skrivTilFil(arkiv, inn.next());
 				break;
 			}
+			
 		} while(valg != 0);
 		
 		

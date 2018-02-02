@@ -156,5 +156,15 @@ public class CDArkiv2 implements CDArkivADT {
 		
 		return antallFunnet;
 	}
+	
+	public String toString() {
+		String ut = "";
+		LinearNode<CD> denne = start;
+		while(denne != null) {
+			ut += denne.getElement();
+			denne = denne.getNeste();
+		}
+		return ut;
+	}
 
 }

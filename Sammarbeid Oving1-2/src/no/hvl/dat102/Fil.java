@@ -7,7 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import no.hvl.dat102.adt.*;
+import no.hvl.dat102.adt.CDArkivADT;
 
 /**
  * Les inn CDArkiv fra .txt-fil, eller lagre et CDArkiv til en .txt-fil
@@ -38,7 +38,7 @@ public class Fil {
    int n = Integer.parseInt(linje);
 
    // Oppretter CDarkiv
-   cda = new CDArkiv(n);
+   cda = new CDArkiv2();
 
    // 4 - Les postene, en hel post om gangen
     for (int i = 0; i < n; i++) {

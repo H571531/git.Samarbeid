@@ -63,6 +63,7 @@ public class Meny {
 			
 			System.out.println("0. Avslutt");
 			valg = inn.nextInt();
+			inn.nextLine();
 			
 			switch(valg) {
 			case 0:

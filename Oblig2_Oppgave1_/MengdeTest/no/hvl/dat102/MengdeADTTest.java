@@ -35,6 +35,21 @@ public abstract class MengdeADTTest {
 	@Before
 	public abstract void setup();
 	
+	@Test
+	public final void testLeggTilAntall() {
+		assertEquals(0,mengde.antall());
+		mengde.leggTil(e0);
+		assertEquals(1,mengde.antall());
+		}
+	
+	@Test
+	public final void testFjern() {
+		mengde.leggTil(e0);
+		assertEquals(e0,mengde.fjern(e0));
+		assertEquals(0,mengde.antall());
+	}
+	
+	
 	/**
 	 * Tester union av to mengder hvor ingen elementer er felles
 	 */

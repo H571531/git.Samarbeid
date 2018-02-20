@@ -2,6 +2,7 @@ package no.hvl.dat102;
 
 //-----------------------------------------
 //
+//
 //Balansering av uttrykk med parenteser {},(),[]
 //} ] ) kalles lukkete symboler (høyre)
 // { [ ( kalles for åpne symboler (venstre)

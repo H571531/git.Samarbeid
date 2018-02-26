@@ -1,7 +1,7 @@
-package no.hib.dat102.kjedet;
+package no.dat102.kjedetStabel;
 
-import no.hVL.dat102.adt.StabelADT;
-import no.hib.dat102.exception.EmptyCollectionException;
+import no.hvl.dat102.adt.StabelADT;
+import no.hvl.dat102.exception.EmptyCollectionException;
 
 public class KjedetStabel<T> implements StabelADT<T> {
 	private LinearNode<T> topp;

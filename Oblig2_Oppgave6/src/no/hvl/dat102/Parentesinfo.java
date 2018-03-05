@@ -31,9 +31,12 @@ public class Parentesinfo{
  private char venstreparentes;
  
  public Parentesinfo(){
-  linjenr  = -1;
-  posisjon = -1;
-  venstreparentes = ')';
+	 this(-1,-1,')');
+ }
+ public Parentesinfo(int linjenr, int posisjon, char venstreparentes) {
+	 this.linjenr=linjenr;
+	 this.posisjon=posisjon;
+	 this.venstreparentes=venstreparentes;
  }
  
  public void settLinjenr(int nyttLinjenr){

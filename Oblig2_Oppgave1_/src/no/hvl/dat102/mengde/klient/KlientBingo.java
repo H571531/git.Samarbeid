@@ -1,6 +1,7 @@
 package no.hvl.dat102.mengde.klient;
 
 import no.hvl.dat102.mengde.tabell.TabellMengde;
+import no.hvl.dat102.mengde.kjedet.KjedetMengde;
 
 public class KlientBingo {
 	// Oppretter 2 mengder med 75 bingokuler i hver.
@@ -30,14 +31,6 @@ public class KlientBingo {
 		if (minMengde1.inneholder(kule1)) {
 			System.out.println("kule 1 funnet i mengde 1");
 		}
-		
-		/*
-		if(minMengde2.inneholder(kule1)) {
-			System.out.println("og i 2");
-		}
-		System.out.println(minMengde1);
-		System.out.println(minMengde2);
-		*/
 	
 		if (minMengde1.equals(minMengde2)) {
 			System.out.println("Like mengder");

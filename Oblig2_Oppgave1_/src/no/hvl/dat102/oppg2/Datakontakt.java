@@ -1,7 +1,5 @@
 package no.hvl.dat102.oppg2;
 
-import no.hvl.dat102.mengde.adt.MengdeADT;
-import no.hvl.dat102.mengde.kjedet.KjedetMengde;
 
 public class Datakontakt {
 	private Medlem[] medlemsTab;
@@ -53,14 +51,12 @@ public class Datakontakt {
 	/**
 	 * Leter etter match for gitt medlem, i forhold til matchende hobbyer.
 	 * Setter statusIndeks til gitt medlem til eventuell match sin tabellindeks, og statusIndeks til eventuell match, til gitt medlems indeks
-	 * @param medlemsnavn
-	 * @return
+	 * @param medlemsnavn Navn på medlem det skal prøves å finne partner for
+	 * @return indeks i medlemstabell for funnet partner
 	 */
 	public int finnPartnerFor(String medlemsnavn) {
 		//Opprette en referanse til medlem som har medlemsnavn gitt som parameter
 		int indeks = finnMedlemsIndeks(medlemsnavn);
-		
-		System.out.println("indeks: " + indeks);
 		
 		int funnetIndeks = -1;
 		
@@ -71,16 +67,17 @@ public class Datakontakt {
 			int i = 0;
 			while(!funnet && i < antallMedlemmer) {
 				if(skalFinneFor.equals(medlemsTab[i])) {
+					//Hoppe over seg selv
 					i++;
-				}
-
-				if((skalFinneFor.passerTil(medlemsTab[i]) && medlemsTab[i].getStatusIndeks() == -1)) {
-					System.out.println("medlemsTab[i]: " + medlemsTab[i]);
+				} else if((skalFinneFor.passerTil(medlemsTab[i]) && medlemsTab[i].getStatusIndeks() == -1)) {
+					//Hvis aktuelt medlem passer til gitt medlem, og aktuelt medlem ikke allerede er matchet:
+					//sett gitt medlems statusindeks til i, sett aktuelt medlems statusindeks til gitt medlems indeks
 					skalFinneFor.setStatusIndeks(i);
 					medlemsTab[i].setStatusIndeks(indeks);
 					funnetIndeks = i;
 					funnet = true;
 				} else {
+					//Sjekkes ikke opp mot seg selv, og passet ikke med aktuelt medlem
 					i++;
 				}
 				
@@ -91,7 +88,7 @@ public class Datakontakt {
 		}
 		
 		//funnetIndeks vil være -1 hvis ingen match funnet
-		//Ingen tilbakemelding hvis opprinnelig medlem ikke funnet? - Legge til tabellen som et nytt medlem?
+		//Hvis ikke funnet - Legge til tabellen som et nytt medlem?
 		return funnetIndeks;
 		
 	}
@@ -104,11 +101,14 @@ public class Datakontakt {
 		//Finn tabellindeks til gitt medlem
 		Medlem skalTilbakestilles = medlemsTab[finnMedlemsIndeks(medlemsnavn)];
 		
-		//Sett statusindeks på koblet medlem til -1
-		medlemsTab[skalTilbakestilles.getStatusIndeks()].setStatusIndeks(-1);
+		if(skalTilbakestilles != null) {
+			//Sett statusindeks på koblet medlem til -1
+			medlemsTab[skalTilbakestilles.getStatusIndeks()].setStatusIndeks(-1);
+			
+			//Sett statusindeks på gitt medlem til -1
+			skalTilbakestilles.setStatusIndeks(-1);
+		}
 		
-		//Sett statusindeks på gitt medlem til -1
-		skalTilbakestilles.setStatusIndeks(-1);
 		
 		
 	}
@@ -126,8 +126,8 @@ public class Datakontakt {
 	
 	public String toString() {
 		String ut = "";
-		for(Medlem medlem : medlemsTab) {
-			ut += medlem + "\n";
+		for(int i = 0; i < antallMedlemmer; i++) {
+			ut += medlemsTab[i] + "\n";
 		}
 		return ut;
 	}

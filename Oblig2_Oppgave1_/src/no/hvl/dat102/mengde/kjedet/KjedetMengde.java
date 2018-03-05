@@ -111,7 +111,7 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 		/*
 		 * Fyll ut
 		 */
-		//begge.settInn() uten å sjekke om begge allerede inneholder aktuelle elementet
+		//Først sett inn alt fra m1 til begge uten å sjekke om begge allerede inneholder aktuelle elementet
 		while(aktuell != null) {
 			((KjedetMengde<T>)begge).settInn(aktuell.getElement());
 			aktuell = aktuell.getNeste();
@@ -148,16 +148,7 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 				((KjedetMengde<T>)snittM).settInn(element);
 			}
 		}
-		/*
 		
-		element = start.getElement();
-		while(element != null) {
-			if(m2.inneholder(element)) {
-				((KjedetMengde<T>)snittM).settInn(element);
-			}
-			
-		}
-		*/
 		return snittM;
 	}
 
@@ -196,13 +187,15 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 		return funnet;
 	}
 
+	
+	//Oppgave 1a)
 	@Override
 	public boolean equals(MengdeADT<T> m2) {
 		boolean likeMengder = true;
 		T element = null;
 		//Fyll ut
 		
-		if((antall == m2.antall())){
+		if(antall == m2.antall()){
 			Iterator<T> iterator = oppramser();
 			while(iterator.hasNext() && likeMengder) {
 				element = (T)iterator.next();
@@ -211,8 +204,9 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 				}
 			}
 			
-			//Hvis ulikt antall elementer, return false
+			
 		} else {
+			//Hvis ulikt antall elementer, return false
 			likeMengder = false;
 		}
 		return likeMengder;
@@ -267,7 +261,13 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 		LinearNode<T> denne = start;
 		
 		while(denne != null) {
-			ut += denne.getElement() + "\t";
+			if(denne.getNeste() == null) {
+				//Hvis siste element, ikke legg til \t
+				ut += denne.getElement();
+			} else {
+				ut += denne.getElement() + "\t";
+			}
+			
 			denne = denne.getNeste();
 		}
 		return ut;

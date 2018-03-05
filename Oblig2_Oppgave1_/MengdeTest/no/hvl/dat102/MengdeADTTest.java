@@ -99,6 +99,9 @@ public abstract class MengdeADTTest {
 		assertTrue(test.equals(union));
 	}
 	
+	/**
+	 * Tester at to like mengder er like, og at to ulike mengder er ulike
+	 */
 	@Test
 	public final void testEquals() {
 		mengde.leggTil(e0);
@@ -118,6 +121,9 @@ public abstract class MengdeADTTest {
 		
 	}
 	
+	/**
+	 * Tester snitt av to mengder med ingen felles elementer
+	 */
 	@Test
 	public final void testSnittIngenFellesElementer() {
 		mengde.leggTil(e0);
@@ -130,18 +136,16 @@ public abstract class MengdeADTTest {
 		
 		MengdeADT<Integer> snitt = mengde.snitt(mengde2);
 		
-		
 		assertEquals(0, snitt.antall());
 		assertFalse(snitt.equals(mengde));
 		assertFalse(snitt.equals(mengde2));
 		
 		assertTrue(snitt.undermengde(test));
-		assertTrue(snitt.undermengde(test));
-		
-		
-		
 	}
 	
+	/**
+	 * Tester snitt av to mengder med noen felles elementer
+	 */
 	public final void testSnittNoenFellesElementer() {
 		mengde.leggTil(e0);
 		mengde.leggTil(e1);
@@ -153,9 +157,7 @@ public abstract class MengdeADTTest {
 		
 		MengdeADT<Integer> snitt = mengde.snitt(mengde2);
 		
-		
 		assertEquals(2, snitt.antall());
-		
 		
 		test.leggTil(e1);
 		test.leggTil(e2);
@@ -165,6 +167,9 @@ public abstract class MengdeADTTest {
 		assertTrue(mengde2.undermengde(snitt));
 	}
 	
+	/**
+	 * Tester differens av to mengder uten felles elementer
+	 */
 	@Test
 	public final void testDifferensIngenFellesElementer() {
 		mengde.leggTil(e0);
@@ -189,6 +194,9 @@ public abstract class MengdeADTTest {
 		
 	}
 	
+	/**
+	 * Tester differens av to mengder med noen felles elementer
+	 */
 	@Test
 	public final void testDifferensNoenFellesElementer() {
 		mengde.leggTil(e0);
@@ -209,6 +217,9 @@ public abstract class MengdeADTTest {
 		assertTrue(test.equals(differens));
 	}
 	
+	/**
+	 * Tester at en mengde er undermengde av en annen mengde
+	 */
 	@Test
 	public final void testUnderMengde() {
 		mengde.leggTil(e0);

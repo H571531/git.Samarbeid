@@ -66,7 +66,7 @@ public class TabellMengde<T> implements MengdeADT<T> {
 
 	@Override
 	public T fjern(T element) {
-		// Søker etter og fjerner element.Retur med null ved ikke-funn
+		// Søker etter og fjerner element.Returnerer null ved ikke-funn
 		
 		boolean funnet = false;
 		T svar = null;
@@ -105,31 +105,30 @@ public class TabellMengde<T> implements MengdeADT<T> {
 		return (MengdeADT<T>)begge;
 	}
 	*/
-	@Override
-	
 	
 	//Oppgave 1b)i)
+	@Override
 	public MengdeADT<T> union(MengdeADT<T> m2) {
 		MengdeADT<T> begge = new TabellMengde<T>(this.antall() + m2.antall());
-		//T element = null;		
+		T element = null;		
 		/*
 		 * Fyll ut
 		 * 	
 		 */	
 		
+		//Først sett inn alt fra m1 til begge uten å sjekke om begge allerede inneholder aktuelle elementet
 		for(int i = 0; i< antall; i++) {
 			((TabellMengde<T>)begge).settInn(tab[i]);
 		}
 		
 		Iterator<T> iterator = m2.oppramser();
+		//Trenger bare å sjekke om element finnes i m1, ikke i begge, som vil bli større og større
 		while(iterator.hasNext()) {
-			T element = iterator.next();
+			element = iterator.next();
 			if(!this.inneholder(element)) {
 				((TabellMengde<T>)begge).settInn(element);
 			}
 		}
-		
-		
 		return begge;
 	}//
 	

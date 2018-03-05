@@ -1,7 +1,5 @@
 package no.hvl.dat102.oppg2;
 
-import java.util.Iterator;
-
 import no.hvl.dat102.mengde.kjedet.KjedetMengde;
 
 public class Medlem {
@@ -27,13 +25,11 @@ public class Medlem {
 	public void leggTilHobby(Hobby hobby) {
 		hobbyer.leggTil(hobby);
 	}
-	// … Konstruktør
-	// … Andre metoder
-	
+
 	/**
 	 * Avgjør om et medlem passer til et annet medlem, basert på om de har nøyaktig samme hobbyer
-	 * @param medlem2
-	 * @return
+	 * @param medlem2 Et annet medlem hvis hobbyer skal sammenlignes med
+	 * @return true hvis medlem2 har like hobbyer
 	 */
 	public boolean passerTil(Medlem medlem2) {
 		return hobbyer.equals(medlem2.hobbyer);
@@ -44,21 +40,11 @@ public class Medlem {
 	}
 	
 	public String visHobbyer() {
-		
-		
 		return "<" + hobbyer + ">";
 		
 	}
 	public String toString() {
-		String ut = navn + "\n" + "Hobbyer: <";
-		Iterator<Hobby> iterator = hobbyer.oppramser();
-		while(iterator.hasNext()) {
-			ut += iterator.next();
-			if(iterator.hasNext()) {
-				ut += ", ";
-			}
-		}
-		ut += ">";
+		String ut = navn + "\n" + "Hobbyer: " + visHobbyer();
 		return ut;
 	}
 	

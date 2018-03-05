@@ -13,8 +13,8 @@ public class Ordliste {
 	 */
 	public static void main(String[] args) {
 
-		MengdeADT<String> ordListe1 = new KjedetMengde<String>();
-		//MengdeADT<String> ordListe1 = new TabellMengde<String>();
+		//MengdeADT<String> ordListe1 = new KjedetMengde<String>();
+		MengdeADT<String> ordListe1 = new TabellMengde<String>();
 
 		String[] ord = { "God", "dag", "Hans", "Hansen", "Hansaby", "Olsen", "Ole", "buss", "rute", "Bergen" };
 
@@ -24,8 +24,8 @@ public class Ordliste {
 		for (int i = 0; i < ord.length; i++) {
 			ordListe1.leggTil(ord[i]);
 		}
-		MengdeADT<String> ordListe2 = new KjedetMengde<String>();
-		//MengdeADT<String> ordListe2 = new TabellMengde<String>();
+		//MengdeADT<String> ordListe2 = new KjedetMengde<String>();
+		MengdeADT<String> ordListe2 = new TabellMengde<String>();
 
 		System.out.print("Oppgi en streng, avslutt med zzz :");
 		String streng = tastatur.nextLine();
@@ -87,7 +87,12 @@ public class Ordliste {
 
 		
 		//Delmengde
-		System.out.println("M2 delmengde av m1: " + ordListe1.undermengde(ordListe2));
+		boolean erUnderMengde = ordListe1.undermengde(ordListe2);
+		if(erUnderMengde) {
+			System.out.println("Ordliste2 er undermengde av ordliste1.");
+		} else {
+			System.out.println("Ordliste 2 er ikke undermengde av ordliste 1.");
+		}
 	}
 
 }

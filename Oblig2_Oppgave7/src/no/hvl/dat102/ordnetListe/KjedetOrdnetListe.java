@@ -1,5 +1,5 @@
-package no.hib.dat102.kjedet;
-import no.hib.dat102.adt.*;
+package no.hvl.dat102.ordnetListe;
+import no.hvl.dat102.adt.*;
 /**
  * 
  * @param <T>
@@ -21,11 +21,16 @@ public class KjedetOrdnetListe<T extends Comparable<T>> implements OrdnetListeAD
 	@Override
 	public T fjernFoerste() {
 		T svar = null;
+		//...Fyll ut
+		
 		if(!erTom()) {
 			svar = foerste.getElement();
 			foerste = foerste.getNeste();
 			antall--;
 		}
+		
+		//Sjekke om listen nå er tom
+		//Hvis det bare var ett element er foerste nå satt til null, mens siste fremdeles refererer til node som skal fjernes
 		if(erTom()) {
 			siste = null;
 		}
@@ -35,13 +40,17 @@ public class KjedetOrdnetListe<T extends Comparable<T>> implements OrdnetListeAD
 	@Override
 	public T fjernSiste() {
 		T svar = null;
+
 		if(!erTom()) {
+			
 			svar = siste.getElement();
 			antall--;
+			
 			if(antall == 0) {
 				foerste = null;
 				siste = null;
 			} else {
+				//Må uansett oppdatere referansen til siste elementet, settes til nest siste element
 				siste = foerste;
 				for(int i = 1; i < antall; i++) {
 					siste = siste.getNeste();
@@ -49,6 +58,7 @@ public class KjedetOrdnetListe<T extends Comparable<T>> implements OrdnetListeAD
 				siste.setNeste(null);
 			}
 		}
+		
 		return svar;
 	}
 
@@ -84,29 +94,33 @@ public class KjedetOrdnetListe<T extends Comparable<T>> implements OrdnetListeAD
 	public void leggTil(T element) {
 		LinearNode<T> aktuell = foerste;
 		LinearNode<T> forrige = null;
-		LinearNode<T> ny = new LinearNode<T>(element);
+		LinearNode<T> nyNode = new LinearNode<T>(element);
 		
-		// Finner riktig plass � sette inn
 		while(aktuell != null && element.compareTo(aktuell.getElement()) > 0) {
 			forrige = aktuell;
 			aktuell = aktuell.getNeste();
+		}
 		
-		}
-		// Har vi flyttet p� oss?
 		if(forrige == null) {
-			ny.setNeste(foerste);
-			foerste = ny;
+			//Hvis forrige == null har forrige aldri blitt oppdatert -> nyNode skal settes inn først
+			nyNode.setNeste(foerste);
+			foerste = nyNode;
 		} else {
-			ny.setNeste(aktuell);
-			forrige.setNeste(ny);
+			//Sette inn midt i eller til slutt
+			nyNode.setNeste(aktuell);
+			forrige.setNeste(nyNode);
 		}
-		// Oppdaterer siste verdi hvis vi har passert den
+		
 		if(aktuell == null) {
-			siste = ny;
+			//Hvis man kom helt gjennom listen må referansen til siste oppdateres
+			siste = nyNode;
 		}
-		// Oppdaterer antall
+		
 		antall++;
+
+		//...Fyll ut
 	}
+
 
 	@Override
 	public T fjern(T element) {
@@ -119,7 +133,7 @@ public class KjedetOrdnetListe<T extends Comparable<T>> implements OrdnetListeAD
 		if (denne != null && element.equals(denne.getElement())) { // funnet
 			antall--;
 			svar = denne.getElement();
-			if (forrige == null) {     // F�rste element
+			if (forrige == null) {     // Første element
 				foerste = foerste.getNeste();
 				if (foerste == null) { // Tom liste
 					siste = null;
@@ -150,4 +164,3 @@ public class KjedetOrdnetListe<T extends Comparable<T>> implements OrdnetListeAD
 	}
 
 }// class
-

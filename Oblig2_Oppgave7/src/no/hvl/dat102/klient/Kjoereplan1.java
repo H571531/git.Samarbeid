@@ -1,15 +1,13 @@
 package no.hvl.dat102.klient;
 
-// Må ha kø-klasse tilgjengelig i prosjektet
+// Mï¿½ ha kï¿½-klasse tilgjengelig i prosjektet
 
 //---------------------------------------------------------------------------
 import java.util.Scanner;
 
 import no.hvl.dat102.Jobb;
 import no.hvl.dat102.JobbSamling;
-import no.hvl.dat102.sirkulaerKoe.*;
-
-
+import no.hvl.dat102.sirkulaerKoe.SirkulaerKoeMedUnntak;
 public class Kjoereplan1{
 	
     public static void main(String[] args){
@@ -20,7 +18,7 @@ public class Kjoereplan1{
         
         Jobb jobb = null;
         int klokke = 0;
-        int tidskrav = 0;		
+        int tidskrav = 0;
         int antall = 0;
 
         //Leser fra fil
@@ -28,30 +26,37 @@ public class Kjoereplan1{
         String filnavn = tastatur.nextLine();
         System.out.println("Datafil: " + filnavn);
         
+        //Lagt til:
+        tastatur.close();
+        ///
         js.lesFraFil(filnavn);
-        antall = js.getAntall(); //Ingen metode som heter "hentAntall()" derimot getAntall() finnes.  
+        
+        //antall = js.hentAntall();
+        //Forandrer til js.getAntall();
+        antall = js.getAntall();
         
         System.out.println("antall " + antall);
         JobbSamling ferdige = new JobbSamling(antall);
 
-        while(ferdige.getAntall() < antall){//Ytre løkke
+        while(ferdige.getAntall() < antall){//Ytre lï¿½kke
             
-            //Henter eventuelle jobber til klarkøen
+            //Henter eventuelle jobber til klarkï¿½en
             do{
                 jobb = js.hentAnkommenJobb(klokke);
                 if(jobb != null){
                     klarKoe.innKoe(jobb);
                 }
+                
             }while(jobb != null);
 
-            //Ta eventuelt ut jobb fra kø A til CPU
+            //Ta eventuelt ut jobb fra kï¿½ A til CPU
             if(klarKoe.antall() > 0){
                 jobb = (Jobb)klarKoe.utKoe();
                 tidskrav = jobb.getKjoeretid();
                 klokke = klokke + tidskrav;
                 jobb.setFerdigTid(klokke);
                 ferdige.leggTil(jobb);
-             }else  // Ingen jobber klar til kjøring
+             }else  // Ingen jobber klar til kjï¿½ring
                    klokke = klokke + 1;
          }//while       
                        

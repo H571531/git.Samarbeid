@@ -1,4 +1,4 @@
-package no.hib.dat102.kjedet; 
+package no.hvl.dat102.ordnetListe; 
 
 public class LinearNode<T> {
 
@@ -24,7 +24,7 @@ public class LinearNode<T> {
     }
 
     /**
-     * Returnerer etterfølger.
+     * Returnerer etterfÃ¸lger.
      *
      * @return neste node
      */
@@ -60,4 +60,3 @@ public class LinearNode<T> {
     }
 
 }
-

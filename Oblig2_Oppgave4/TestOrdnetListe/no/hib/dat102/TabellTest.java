@@ -1,6 +1,6 @@
 package no.hib.dat102;
 
-import no.hib.dat102.tabell.TabellOrdnetListe;
+import no.hvl.dat102.tabell.TabellOrdnetListe;
 
 public class TabellTest extends ListeADTTest {
 	@Override

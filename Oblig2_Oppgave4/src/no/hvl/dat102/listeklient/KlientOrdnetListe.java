@@ -1,13 +1,13 @@
-package no.hib.dat102.listeklient;
+package no.hvl.dat102.listeklient;
 
 import java.util.Scanner;
 
-import no.hib.dat102.kjedet.KjedetOrdnetListe;
+import no.hvl.dat102.kjedet.KjedetOrdnetListe;
 
 public final class KlientOrdnetListe {
 
 	/**
-	 * Hindrer muligheten til å instansiere denne klassen.
+	 * Hindrer muligheten til ï¿½ instansiere denne klassen.
 	 */
 	private KlientOrdnetListe() {
 	}

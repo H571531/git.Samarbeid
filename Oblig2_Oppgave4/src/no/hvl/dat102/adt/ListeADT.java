@@ -1,4 +1,4 @@
-package no.hib.dat102.adt;
+package no.hvl.dat102.adt;
 
 /**
  * Definerer interface til en generell liste. Spesielle typer av lister vil bli
@@ -25,7 +25,7 @@ public interface ListeADT<T> {
 	boolean inneholder(T element);
 
     /**
-     * Fjerner og returnerer det første elmentet fra listen.
+     * Fjerner og returnerer det fï¿½rste elmentet fra listen.
      *
      * @return elementet som er fjernet
      */
@@ -40,9 +40,9 @@ public interface ListeADT<T> {
 
     
     /**
-     * Returnerer en referanse til det første elementet i denne listen.
+     * Returnerer en referanse til det fï¿½rste elementet i denne listen.
      *
-     * @return første element i listen
+     * @return fï¿½rste element i listen
      */
     T foerste();
 

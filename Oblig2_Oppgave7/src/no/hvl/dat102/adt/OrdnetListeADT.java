@@ -1,4 +1,4 @@
-package no.hib.dat102.adt;
+package no.hvl.dat102.adt;
 public interface OrdnetListeADT<T extends Comparable<T>> extends ListeADT<T> {
 
 	

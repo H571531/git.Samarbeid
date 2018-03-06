@@ -1,6 +1,6 @@
-package no.hib.dat102.tabell;
+package no.hvl.dat102.tabell;
 
-import no.hib.dat102.adt.OrdnetListeADT;
+import no.hvl.dat102.adt.OrdnetListeADT;
 
 public class TabellOrdnetListe<T extends Comparable<T>> implements OrdnetListeADT<T> {
 	

@@ -1,4 +1,4 @@
-package no.hib.dat102.listeklient; 
+package no.hvl.dat102.listeklient; 
   
 public class Lag implements Comparable<Lag>{
  private String navn; 
@@ -28,7 +28,7 @@ public class Lag implements Comparable<Lag>{
 
  /*****************************************************************
    Sammenligner antall seire av dette lag med et annet lag.
-   Returnerer  -1, 0, or 1 for mindre enn, lik , eller større enn.
+   Returnerer  -1, 0, or 1 for mindre enn, lik , eller stï¿½rre enn.
  *****************************************************************/
  @Override
 public int compareTo (Lag detAndre){

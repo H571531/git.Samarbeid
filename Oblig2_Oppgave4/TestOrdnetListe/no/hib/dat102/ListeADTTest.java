@@ -7,7 +7,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-import no.hib.dat102.adt.OrdnetListeADT;
+import no.hvl.dat102.adt.OrdnetListeADT;
 
 public abstract class ListeADTTest {
 
@@ -90,7 +90,7 @@ public abstract class ListeADTTest {
 
 	
 	@Test
-	public final void viseOrdnetIkkeØkende() { 
+	public final void viseOrdnetIkkeÃ¸kende() { 
 		liste.leggTil(e1); 
 		liste.leggTil(e2); 
 		liste.leggTil(e5); 
@@ -111,7 +111,7 @@ public abstract class ListeADTTest {
 	 */
 	@Test
 	public final void leggTilOgfjernMedDuplikater() {
-		//... Fyll ut med å legge til passende elementer
+		//... Fyll ut med ï¿½ legge til passende elementer
 		
 		liste.leggTil(e3);
 		liste.leggTil(e1);
@@ -163,7 +163,7 @@ public abstract class ListeADTTest {
 
 	
 	/**
-	 * Tester om leggTil-fjern på en tom liste gir en tom liste.
+	 * Tester om leggTil-fjern pï¿½ en tom liste gir en tom liste.
 	 */
 	@Test
 	public final void leggTilFjernErTom() {
@@ -178,7 +178,7 @@ public abstract class ListeADTTest {
 	}
 
 	/**
-	 * Prøver å ta ut et element fra en tom liste.
+	 * Prï¿½ver ï¿½ ta ut et element fra en tom liste.
 	 */
 	@Test
 	public final void fjernFraTomListe() {

@@ -1,4 +1,4 @@
-package no.hib.dat102.listeklient;
+package no.hvl.dat102.listeklient;
 
 public class KlientTurnering {
  /*****************************************************************

@@ -7,13 +7,16 @@ public class Jobb implements Comparable<Jobb> {
 	private int ankomsttid;
 	private int kjoeretid;
 	private int ferdigtid;
+	//Oppgave b
+	private int resttid;
 
-	// Konstrukt�rer
+	// Konstrukt�rer
 	public Jobb(int jnr, int kjtid, int anktid) {
 		jobbnr = jnr;
 		ankomsttid = anktid;
 		kjoeretid = kjtid;
 		ferdigtid = -1;
+		resttid = kjoeretid;
 
 	}
 
@@ -39,6 +42,23 @@ public class Jobb implements Comparable<Jobb> {
 		else
 			return 0;
 	}//
+	
+	//////////////////////////
+	//Oppgave b
+	public int getResttid() {
+		return resttid;
+	}
+	
+	/**
+	 * Setter tid som gjenstår av jobben
+	 * @param nyRest Tid som gjenstår
+	 */
+	public void setResttid(int nyRest) {
+		
+		//Kunne kanskje tatt inn det som skal tas vekk som parameter?
+		resttid = nyRest;
+	}
+	////////////////////////////
 
 @Override
 public int compareTo(Jobb denAndre){
@@ -62,8 +82,8 @@ public int compareTo(Jobb denAndre){
 
 	@Override
 	public String toString() {
-		return (jobbnr + "\t\t\t" + ankomsttid + "\t\t\t" + kjoeretid + "\t\t\t" + ferdigtid + "\t\t\t" + finnVenteTid()
-				+ "\t\t\t");
+		return (jobbnr + "\t\t" + ankomsttid + "\t\t" + kjoeretid + "\t\t" + ferdigtid + "\t\t" + finnVenteTid()
+				+ "\t\t");
 	}//
 
 }// class

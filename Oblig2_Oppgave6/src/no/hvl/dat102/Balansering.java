@@ -7,34 +7,35 @@ import no.hvl.dat102.kjedetStabel.*;
 //-----------------------------------------
 //
 //Balansering av uttrykk med parenteser {},(),[]
-//} ] ) kalles lukkete symboler (høyre)
-// { [ ( kalles for åpne symboler (venstre)
+//} ] ) kalles lukkete symboler (hï¿½yre)
+// { [ ( kalles for ï¿½pne symboler (venstre)
 //...{... [...(...)...]...}... lovlig (balansert) utrykk
 //...{...(...[...)...]...}... ulovlig (ikke balansert) uttrykk
 //algoritme balansering
 // Lag en tom stabel 
-// så lenge( ikke-slutt på strengen og fortsatt balansert){
-// hvis symbolet er åpent
-// stable det på
+// sï¿½ lenge( ikke-slutt pï¿½ strengen og fortsatt balansert){
+// hvis symbolet er ï¿½pent
+// stable det pï¿½
 // ellers hvis symbolet er lukket
 // hvis stabelen er tom
 // sett fortsatt = usann, feilmelding
 // ellers
-// stable av symbol (åpent symbol)
-// hvis det åpne symbolet ikke svarer til det sist leste
+// stable av symbol (ï¿½pent symbol)
+// hvis det ï¿½pne symbolet ikke svarer til det sist leste
 // lukkete symbolet
 // sett fortsatt = usann, feilmelding
 // }
-// hvis stabelen er ikke-tom så feilmelding */
+// hvis stabelen er ikke-tom sï¿½ feilmelding */
 //
 //-----------------------------------------
 
 public class Balansering {
-	// Her opphever du kommentarsetning når du har fått lagt inn
-	// nødvendig kode
+	// Her opphever du kommentarsetning nï¿½r du har fï¿½tt lagt inn
+	// nï¿½dvendig kode
 	// SirkulaerStabel<Parentesinfo>stabel = new
 	// SirkulaerStabel<Parentesinfo>();
 private StabelADT<Parentesinfo> ApneSymboler=new KjedetStabel<Parentesinfo>();
+private int antallFeil = 0;
 	private boolean passer(char apent, char lukket) {
 		switch (apent) {
 		case '(':
@@ -61,10 +62,12 @@ private StabelADT<Parentesinfo> ApneSymboler=new KjedetStabel<Parentesinfo>();
                 try {
                     Parentesinfo apen = ApneSymboler.pop();
                     if(!(passer(apen.hentVenstreparentes(), Tegn))) {
-                        System.out.println("Lukketegnet " + Tegn + "på linje " + linjenr +" passer ikke åpne tegnet:  " + apen.hentVenstreparentes() +"På linje: "+ apen.hentLinjenr() );
+                    	antallFeil++;
+                        System.out.println("Lukketegnet " + Tegn + " pÃ¥ linje " + linjenr +" passer ikke Ã¥pne tegnet:  " + apen.hentVenstreparentes() +" pÃ¥ linje: "+ apen.hentLinjenr() );
                     }//if
                 } catch(EmptyCollectionException e) {
-                    System.out.println("Symbolet " + Tegn + " på linje nr " + linjenr + " mangler åpnesymbol");
+                	antallFeil++;
+                    System.out.println("Symbolet " + Tegn + " pÃ¥ linje nr " + linjenr + " mangler Ã¥pnesymbol");
                 }//Catch
             }//if
         }//for
@@ -107,10 +110,15 @@ private StabelADT<Parentesinfo> ApneSymboler=new KjedetStabel<Parentesinfo>();
         if(!ApneSymboler.erTom()) {
             while(!ApneSymboler.erTom()) {
                 Parentesinfo ingenlukk = ApneSymboler.pop();
-                System.out.println("Åpnesymbol " + ingenlukk.hentVenstreparentes() + " på linje " + ingenlukk.hentLinjenr() + " har ingen lukkesymbol.");
+                antallFeil++;
+                System.out.println("Ã…pnesymbol " + ingenlukk.hentVenstreparentes() + " pÃ¥ linje " + ingenlukk.hentLinjenr() + " har ingen lukkesymbol.");
             }//while
         }//if
-
+        if(antallFeil == 0) {
+        	System.out.println("Ingen feil funnet!");
+        } else {
+        	System.out.println("Det ble funnet " + antallFeil + " feil");
+        }
 	}// metode
 
 }// class

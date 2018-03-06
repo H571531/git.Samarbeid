@@ -3,11 +3,11 @@ import java.util.Scanner;
 
 import no.hvl.dat102.Person;
 import no.hvl.dat102.adt.KoeADT;
-import no.hvl.dat102.adt.ListeADT;
+import no.hvl.dat102.adt.OrdnetListeADT;
 import no.hvl.dat102.kjedet.KjedetOrdnetListe;
 import no.hvl.dat102.kjedetKoe.KjedetKoe;
 import no.hvl.dat102.sirkulaerKoe.SirkulaerKoMedUnntak;
-import no.hvl.dat102.adt.*;
+import no.hvl.dat102.tabellOrdnetListe.TabellOrdnetListe;
 
 public class Klient {
 
@@ -17,9 +17,10 @@ public class Klient {
 		 KoeADT <Person> PersonKoe = new  KjedetKoe<Person>();
 		 KoeADT <Person> SirkulaerPersonKoe=new SirkulaerKoMedUnntak<Person>();
 		 OrdnetListeADT <Person> OrdnetPersonListe=new KjedetOrdnetListe<Person>();
+		 OrdnetListeADT<Person> OrdnetPersonTabellListe = new TabellOrdnetListe<Person>();
 		 	
 		/* for(int i=0; i<6; i++) {
-			System.out.println("Fødselsår");
+			System.out.println("Fï¿½dselsï¿½r");
 			int fodselsar = innData.nextInt();
 			innData.nextLine();
 			System.out.println("Skriv inn fornavn");
@@ -34,9 +35,9 @@ public class Klient {
 		 //<Debug> Lager personer rett i koden for kjappere tester. 
 		 
 		 Person Personen = new Person("Kristoffer","Nome",1984);
-		 Person Personto = new Person("Ole","Olesen",1987);
-		 Person Persontre = new Person("Kari","Karisen",1991);
-		 Person Personfire = new Person("John","Johnsen",1989);
+		 Person Personto = new Person("Ole","Olesen",1984);
+		 Person Persontre = new Person("Kari","Karisen",1996);
+		 Person Personfire = new Person("John","Johnsen",1995);
 		 Person Personfem = new Person("Ice","T",1990);
 		 Person Personseks = new Person("Adrian","Mortensen",1995);
 		 
@@ -62,25 +63,37 @@ public class Klient {
 		 OrdnetPersonListe.leggTil(Personfem);
 		 OrdnetPersonListe.leggTil(Personseks);
 		 
+		 OrdnetPersonTabellListe.leggTil(Personen);
+		 OrdnetPersonTabellListe.leggTil(Personto);
+		 OrdnetPersonTabellListe.leggTil(Persontre);
+		 OrdnetPersonTabellListe.leggTil(Personfire);
+		 OrdnetPersonTabellListe.leggTil(Personfem);
+		 OrdnetPersonTabellListe.leggTil(Personseks);
+		 
+		 
 		 
 		 
 		 
 		 //</Debug>
 		 
 		 innData.close();
-		 System.out.println("Kjedet kø");
+		 System.out.println("Kjedet kÃ¸");
 	while(!PersonKoe.erTom()) {
 		System.out.println((PersonKoe.utKoe()).toString());
 		}
 	
-		System.out.println("\n"+"Sirkulær kø");
+		System.out.println("\n"+"SirkulÃ¦r kÃ¸");
 	while(!SirkulaerPersonKoe.erTom()) {
 		System.out.println((SirkulaerPersonKoe.utKoe()).toString());
 	}
 	
-	System.out.println("\n"+"Ordnet liste");
+	System.out.println("\n"+"Ordnet kjedet liste");
 	while(!(OrdnetPersonListe.erTom())) {
 	System.out.println(OrdnetPersonListe.fjernFoerste().toString());
+	}
+	System.out.println("\nOrdnet tabell");
+	while(!(OrdnetPersonTabellListe.erTom())) {
+		System.out.println(OrdnetPersonTabellListe.fjernFoerste());
 	}
 	
 	}

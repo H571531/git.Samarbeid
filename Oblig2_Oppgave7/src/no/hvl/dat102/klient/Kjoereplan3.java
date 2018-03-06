@@ -22,8 +22,8 @@ public class Kjoereplan3 {
 		int antall = 0;
 		
 		/////////////////////
-		int tidssegmentA = 80;
-		int tidssegmentB = 0;
+		int tidssegmentA = 50;
+		int tidssegmentB = 20;
 		
 		//Lese fra fil
 		System.out.println("Oppgi datafil: ");

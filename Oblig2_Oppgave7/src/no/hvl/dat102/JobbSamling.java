@@ -1,6 +1,6 @@
 package no.hvl.dat102;
 import java.io.*;
-//Kjøreplan 1
+//Kjï¿½replan 1
 public class JobbSamling {
 
 	//Konstanter
@@ -9,7 +9,7 @@ public class JobbSamling {
     private int antall;
     private Jobb[] tabell;
 
-    //Konstruktør
+    //Konstruktï¿½r
     public JobbSamling(){
         tabell = new Jobb[0];
         antall = 0;
@@ -56,7 +56,7 @@ public void lesFraFil(String filnavn){
     for(int i = 0; i < antallJobber; i++){
 
       //Leser en post, og finner indeksene til skilletegn
-      //NB! Rekkefølge på datafil annen rekkefølge enn i oppgaven
+      //NB! Rekkefï¿½lge pï¿½ datafil annen rekkefï¿½lge enn i oppgaven
       String post = tekstLeser.readLine();
 
       //Jobbnr
@@ -69,7 +69,7 @@ public void lesFraFil(String filnavn){
       sluttIndeks = post.indexOf(FELT_SLUTT_TEGN,startIndeks);
       ankomst = Integer.parseInt(post.substring(startIndeks, sluttIndeks));
 
-      //Kjøretid
+      //Kjï¿½retid
       startIndeks = sluttIndeks + 1;
       kjtid = Integer.parseInt(post.substring(startIndeks));
 
@@ -113,7 +113,7 @@ public void lesFraFil(String filnavn){
 
 
     public void visJobber(){
-    	System.out.println("Nr       Anktid       CPUtid      Ferdig      Ventetid");
+    	System.out.println("Nr\t\tAnktid\t\tCPUtid\t\tFerdig\t\tVentetid");
     	int sum = 0;
     	for(int i = 0; i < antall; i++){
     		sum = sum + tabell[i].finnVenteTid();

@@ -35,8 +35,8 @@ public class Balansering {
 	// SirkulaerStabel<Parentesinfo>stabel = new
 	// SirkulaerStabel<Parentesinfo>();
 private StabelADT<Parentesinfo> ApneSymboler=new KjedetStabel<Parentesinfo>();
-	private boolean passer(char åpent, char lukket) {
-		switch (åpent) {
+	private boolean passer(char apent, char lukket) {
+		switch (apent) {
 		case '(':
 			return (lukket == ')');
 		case '[':

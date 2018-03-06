@@ -52,8 +52,8 @@ public class Klient {
 		 
 		 //</Debug>
 		 
-		// innData.close();
-		 System.out.println("Kø");
+		 innData.close();
+		 System.out.println("Kjedet kø");
 	while(!PersonKoe.erTom()) {
 		System.out.println((PersonKoe.utKoe()).toString());
 		}

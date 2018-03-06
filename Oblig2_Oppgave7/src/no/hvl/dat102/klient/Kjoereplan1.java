@@ -7,17 +7,20 @@ import java.util.Scanner;
 
 import no.hvl.dat102.Jobb;
 import no.hvl.dat102.JobbSamling;
+import no.hvl.dat102.sirkulaerKoe.*;
+
+
 public class Kjoereplan1{
 	
     public static void main(String[] args){
     	//Fyll ut
         Scanner tastatur = new Scanner(System.in);
         JobbSamling js = new JobbSamling();
-        //SirkulaerKoe<Jobb> klarKø = new Sirkulaer<Jobb>();
+        SirkulaerKoeMedUnntak<Jobb> klarKoe = new SirkulaerKoeMedUnntak<Jobb>();
         
         Jobb jobb = null;
         int klokke = 0;
-        int tidskrav = 0;
+        int tidskrav = 0;		
         int antall = 0;
 
         //Leser fra fil

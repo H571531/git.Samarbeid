@@ -86,10 +86,11 @@ private StabelADT<Parentesinfo> ApneSymboler=new KjedetStabel<Parentesinfo>();
 		try {
 			linje = tekstLeser.readLine();
 			while (linje != null) {
-				foretaBalansering(linje,linjenr++);
+				linjenr++;
+				foretaBalansering(linje,linjenr);
 				// Fyll ut
 				linje = tekstLeser.readLine();
-				linjenr++;
+				
 				
 			} // while
 		}

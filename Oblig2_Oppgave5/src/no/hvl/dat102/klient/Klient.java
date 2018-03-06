@@ -3,8 +3,11 @@ import java.util.Scanner;
 
 import no.hvl.dat102.Person;
 import no.hvl.dat102.adt.KoeADT;
+import no.hvl.dat102.adt.ListeADT;
+import no.hvl.dat102.kjedet.KjedetOrdnetListe;
 import no.hvl.dat102.kjedetKoe.KjedetKoe;
 import no.hvl.dat102.sirkulaerKoe.SirkulaerKoMedUnntak;
+import no.hvl.dat102.adt.*;
 
 public class Klient {
 
@@ -13,6 +16,8 @@ public class Klient {
 		 Scanner innData = new Scanner(System.in);
 		 KoeADT <Person> PersonKoe = new  KjedetKoe<Person>();
 		 KoeADT <Person> SirkulaerPersonKoe=new SirkulaerKoMedUnntak<Person>();
+		 OrdnetListeADT <Person> OrdnetPersonListe=new KjedetOrdnetListe<Person>();
+		 	
 		/* for(int i=0; i<6; i++) {
 			System.out.println("Fødselsår");
 			int fodselsar = innData.nextInt();
@@ -30,7 +35,7 @@ public class Klient {
 		 
 		 Person Personen = new Person("Kristoffer","Nome",1984);
 		 Person Personto = new Person("Ole","Olesen",1987);
-		 Person Persontre = new Person("Kari","Karisen",1988);
+		 Person Persontre = new Person("Kari","Karisen",1991);
 		 Person Personfire = new Person("John","Johnsen",1989);
 		 Person Personfem = new Person("Ice","T",1990);
 		 Person Personseks = new Person("Adrian","Mortensen",1995);
@@ -50,6 +55,16 @@ public class Klient {
 		 SirkulaerPersonKoe.innKoe(Personfem);
 		 SirkulaerPersonKoe.innKoe(Personseks);
 		 
+		 OrdnetPersonListe.leggTil(Personen);
+		 OrdnetPersonListe.leggTil(Personto);
+		 OrdnetPersonListe.leggTil(Persontre);
+		 OrdnetPersonListe.leggTil(Personfire);
+		 OrdnetPersonListe.leggTil(Personfem);
+		 OrdnetPersonListe.leggTil(Personseks);
+		 
+		 
+		 
+		 
 		 //</Debug>
 		 
 		 innData.close();
@@ -62,5 +77,11 @@ public class Klient {
 	while(!SirkulaerPersonKoe.erTom()) {
 		System.out.println((SirkulaerPersonKoe.utKoe()).toString());
 	}
+	
+	System.out.println("\n"+"Ordnet liste");
+	while(!(OrdnetPersonListe.erTom())) {
+	System.out.println(OrdnetPersonListe.fjernFoerste().toString());
+	}
+	
 	}
 }

@@ -4,7 +4,7 @@ import no.hvl.dat102.kjedetKoe.KjedetKoe;
 
 public class RadixSortering {
 
-	public void Radix(Integer[] liste) {
+	public static void Radix(Integer[] liste) {
 		String temp;
 		Integer tallObj;
 		int siffer, tall;
@@ -31,8 +31,9 @@ public class RadixSortering {
 		} // ytre løkke
 		/** skriver ut sortert listet */
 		for (int i = 0; i < liste.length; i++) {
-			System.out.println(liste[i]);
+			System.out.print(liste[i]+", ");
 		}
+			System.out.println();
 
 	}
 

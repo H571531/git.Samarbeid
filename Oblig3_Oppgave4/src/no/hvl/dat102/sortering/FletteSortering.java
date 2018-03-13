@@ -40,6 +40,7 @@ public class FletteSortering {
 		 * hjelpetabellen.
 		 */
 		int indeks = 0;
+		
 		while ((forste1 <= siste1) && (forste2 <= siste2)) {
 			if (tabell[forste1].compareTo(tabell[forste2]) <= 0) {
 				hjelpeTabell[indeks] = tabell[forste1];

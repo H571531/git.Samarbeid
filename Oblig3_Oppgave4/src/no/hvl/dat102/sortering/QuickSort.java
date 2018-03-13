@@ -12,6 +12,11 @@ public class QuickSort {
 			kvikkSort(data, posPartisjon+1, maks);
 			}
 		}// metode
+	
+	public static <T extends Comparable<T>> void kvikkSort (T[] data){
+	// kall av metoden på forrige slide
+		kvikkSort(data, 0, data.length-1);
+	}//metode
 
 	private static <T extends Comparable<T>> int finnPartisjon (T[] data, int min, int maks) {
 		int venstre, hoyre;

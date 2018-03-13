@@ -36,6 +36,10 @@ public class SorteringsResultat {
 				tid1 = System.nanoTime();
 				Sortering.radixSortering(tabell);
 				return System.nanoTime() -tid1;
+			case QS2:
+				tid1 = System.nanoTime();
+				Sortering.kvikkSortering2(tabell);
+				return System.nanoTime() - tid1;
 				default: return 0;
 				
 			
@@ -65,7 +69,7 @@ public class SorteringsResultat {
 		long gjSnittstid = totalt/tidsResultat.size();
 		System.out.println("\nTotal tid: " + totalt + " ns.");
 		System.out.println("Gjennomsnitt: " + gjSnittstid + " ns.");
-		if(type == SorteringsValg.QS || type == SorteringsValg.FLETTE) {
+		if(type == SorteringsValg.QS || type == SorteringsValg.FLETTE || type == SorteringsValg.QS2) {
 			System.out.println("C: tid / (n log2n): " + (gjSnittstid / (tabStorrelse * (Math.log(tabStorrelse) / (Math.log(2))))));
 		} else if (type == SorteringsValg.BOBLE || type == SorteringsValg.INNSETTING || type == SorteringsValg.UTVALG){
 			System.out.println("C: tid / n^2 :" + (gjSnittstid / Math.pow(tabStorrelse, 2)));

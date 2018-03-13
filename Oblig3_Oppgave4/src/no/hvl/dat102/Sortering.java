@@ -114,6 +114,39 @@ public class Sortering {
 		
 	}
 	
+	public static <T extends Comparable<? super T>> void kvikkSortering2(T[] tabell) {
+		kvikkSortering2(tabell, 0, tabell.length-1);
+		sorteringVedInnsetting2(tabell, 0, tabell.length-1);
+	}
+	
+	public static <T extends Comparable<? super T>> void kvikkSortering2(T[] tabell, int min, int maks) {
+		int posPartisjon;
+		
+		//Terskel for å bruke sorteringVedInnsetting2:
+		final int MIN = 50;
+		
+		if(maks - min + 1 > MIN) {
+			posPartisjon = lagPartisjon(tabell, min, maks);
+			//Sortere venstre side
+			kvikkSortering2(tabell, min, posPartisjon-1);
+			//Sortere høyre side
+			kvikkSortering2(tabell, posPartisjon+1, maks);
+			
+		}
+	}
+	
+	public static <T extends Comparable<? super T>> void sorteringVedInnsetting2(T[] tabell, int forste, int siste) {
+		for(int i = forste + 1; i <= siste; i++) {
+			T nokkel = tabell[i];
+			int p = i;
+			while(p > 0 && tabell[p-1].compareTo(nokkel) > 0) {
+				tabell[p] = tabell[p-1];
+				p--;
+			}
+			tabell[p] = nokkel;
+		}
+	}
+	
 	public static <T extends Comparable<? super T>> void fletteSortering(T[] tabell){
 		fletteSortering(tabell, 0, tabell.length-1);
 	}
@@ -234,6 +267,8 @@ public class Sortering {
 			}
 		}
 	}
+	
+	
 	
 	
 	private static <T extends Comparable<? super T>> void byttPlass(T[] tabell, int indeks1, int indeks2) {

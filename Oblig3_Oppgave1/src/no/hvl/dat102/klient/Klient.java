@@ -16,8 +16,5 @@ public class Klient {
 			System.out.print(Rekursjon.AritmetiskElement(i)+"\t");
 		}//for
 		System.out.println();
-		
-		
-	}
-
-}
+	}//Main
+}//Class

@@ -1,4 +1,4 @@
-package no.hvl.dat100.sortering;
+package no.hvl.dat102.sortering;
 
 public class UtvalgsSortering {
 	

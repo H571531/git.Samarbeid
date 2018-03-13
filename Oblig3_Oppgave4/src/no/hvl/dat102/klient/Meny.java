@@ -36,6 +36,7 @@ public class Meny {
 		System.out.println("4. Sorter tabell med quicksort");
 		System.out.println("5. Sorter tabell med flettesortering");
 		System.out.println("6. Sorter tabell med radix-sortering");
+		System.out.println("7. --- Sorter tabell med quicksort2 ---");
 
 		valg1 = inn.nextInt();
 		inn.nextLine();
@@ -95,6 +96,9 @@ public class Meny {
 			case RADIX:
 				tab6 = TabellTing.tilfeldigTabellFireSifreSamme(storrelse);
 				bruktTid = SorteringsResultat.testSortering(sValg, tab6);
+				break;
+			case QS2:
+				bruktTid = SorteringsResultat.testSortering(sValg, tab1);
 				break;
 
 			}

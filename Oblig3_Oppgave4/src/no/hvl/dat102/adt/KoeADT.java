@@ -1,7 +1,5 @@
 package no.hvl.dat102.adt;
 
-import no.hvl.dat102.sirkulaerKoe.EmptyCollectionException;
-
 public interface KoeADT<T> {
 	
 	/**

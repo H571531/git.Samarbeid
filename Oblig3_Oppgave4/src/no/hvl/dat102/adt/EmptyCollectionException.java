@@ -1,4 +1,4 @@
-package no.hvl.dat102.sirkulaerKoe;
+package no.hvl.dat102.adt;
 //********************************************************************
 //  EmptyCollectionException.java   //
 //  Representerer situasjonen når samlingen er tom

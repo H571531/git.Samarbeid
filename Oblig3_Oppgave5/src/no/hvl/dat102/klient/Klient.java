@@ -18,7 +18,7 @@ public class Klient {
 			
 		tid2=System.nanoTime()-tid2;
 		
-		
+		//Hei
 		System.out.println("Sortering ved innsetting uten binaersok\n tid: "+ tid1/1000 +"uS");
 		System.out.println("Sortering ved innsetting med binaersok\n tid: "+tid2/1000+"uS");
 		

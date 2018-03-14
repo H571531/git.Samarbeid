@@ -1,7 +1,7 @@
 package no.hvl.dat102.kjedetKoe;
 
+import no.hvl.dat102.adt.EmptyCollectionException;
 import no.hvl.dat102.adt.KoeADT;
-import no.hvl.dat102.sirkulaerKoe.EmptyCollectionException;
 
 public class KjedetKoe<T> implements KoeADT<T> {
 	

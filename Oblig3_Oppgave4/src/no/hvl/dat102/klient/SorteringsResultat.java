@@ -40,7 +40,13 @@ public class SorteringsResultat {
 				tid1 = System.nanoTime();
 				Sortering.kvikkSortering2(tabell);
 				return System.nanoTime() - tid1;
+			case INNSETTING3:
+				tid1 = System.nanoTime();
+				Sortering.SorteringVedInnsetting3(tabell);
+				return System.nanoTime() - tid1;
+			
 				default: return 0;
+				
 				
 			
 		}
@@ -63,12 +69,12 @@ public class SorteringsResultat {
 		System.out.println("Antall tester: " + tidsResultat.size());
 		System.out.print("Tider:\t");
 		for(long res : tidsResultat) {
-			System.out.print(res + " ns\t");
+			System.out.print(res + " ns = " + res/1000000 + " ms\t");
 			totalt += res;
 		}
 		long gjSnittstid = totalt/tidsResultat.size();
-		System.out.println("\nTotal tid: " + totalt + " ns.");
-		System.out.println("Gjennomsnitt: " + gjSnittstid + " ns.");
+		System.out.println("\nTotal tid: " + totalt + " ns = " + totalt/1000000 + " ms");
+		System.out.println("Gjennomsnitt: " + gjSnittstid + " ns = " + gjSnittstid/1000000 + " ms");
 		if(type == SorteringsValg.QS || type == SorteringsValg.FLETTE || type == SorteringsValg.QS2) {
 			System.out.println("C: tid / (n log2n): " + (gjSnittstid / (tabStorrelse * (Math.log(tabStorrelse) / (Math.log(2))))));
 		} else if (type == SorteringsValg.BOBLE || type == SorteringsValg.INNSETTING || type == SorteringsValg.UTVALG){

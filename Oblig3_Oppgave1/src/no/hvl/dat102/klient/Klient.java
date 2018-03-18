@@ -7,6 +7,8 @@ public class Klient {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("Sum av de 100 forste tallene: "+Rekursjon.aritmetiskRekkeSum(100));
+		
+		System.out.println("\n");
 
 		for(int i=1; i<=10; i++) {
 			System.out.print("a"+i+"\t");	

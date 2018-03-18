@@ -31,10 +31,10 @@ public class HanoiTaarn {
 		//tid = Duration.between(tid1,  tid2);
 		tidSystem = nanoTid2 - nanoTid1;
 		
-		System.out.println("Gjort " + antallFlyttinger + " flyttinger.");
+		System.out.println("Brukt " + totalDisks + " disker. Gjort " + antallFlyttinger + " flyttinger.");
 		System.out.println("Formel: a_n = 2^n - 1 = " + (Math.pow(2, totalDisks)  -1));
 		//System.out.println("Brukte " + tid.toNanos() + "nanosek.");
-		System.out.println("Brukte " + tidSystem + " nanosek.");
+		//System.out.println("Brukte " + tidSystem + " nanosek.");
 	}
 	
 	

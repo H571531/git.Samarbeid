@@ -33,6 +33,24 @@ public class Sortering {
 		
 	}
 	
+	//Oppgave 5 - Sortering ved innsetting som bruker binærsøking for å finne rett plass i den sorterte tabellen
+	public static <T extends Comparable<? super T>> void SorteringVedInnsetting3(T[] tabell) {
+		T aktuell;
+		for(int i = 1; i < tabell.length; i++) {
+			aktuell = tabell[i];
+			
+			//I stedet for gradvis flytting bakover med gjentatte sammenligninger, finnes rett plass gjennom binaerSoek5
+			int nyPosisjon = Soking.binaerSoek5(tabell, 0, i, aktuell);
+			
+			for(int j = i; j > nyPosisjon; j--) {
+				tabell[j] = tabell[j-1];
+			}
+			tabell[nyPosisjon] = aktuell;
+			
+		}
+		
+	}
+	
 	
 	public static <T extends Comparable<? super T>> void sorteringVedUtvalg(T[] tabell) {
 		int minsteIndeks = 0;
@@ -114,12 +132,13 @@ public class Sortering {
 		
 	}
 	
+	//Oppgave 4d - Quicksort som bruker sortering ved innsetting når partisjoner har mindre element enn MIN
 	public static <T extends Comparable<? super T>> void kvikkSortering2(T[] tabell) {
 		kvikkSortering2(tabell, 0, tabell.length-1);
 		sorteringVedInnsetting2(tabell, 0, tabell.length-1);
 	}
 	
-	public static <T extends Comparable<? super T>> void kvikkSortering2(T[] tabell, int min, int maks) {
+	private static <T extends Comparable<? super T>> void kvikkSortering2(T[] tabell, int min, int maks) {
 		int posPartisjon;
 		
 		//Terskel for å bruke sorteringVedInnsetting2:
@@ -127,6 +146,7 @@ public class Sortering {
 		
 		if(maks - min + 1 > MIN) {
 			posPartisjon = lagPartisjon(tabell, min, maks);
+			//Oppgavetekst kaller på kvikkSort - forandrer i stedet til kvikkSortering2, som er den nye metoden.
 			//Sortere venstre side
 			kvikkSortering2(tabell, min, posPartisjon-1);
 			//Sortere høyre side
@@ -135,7 +155,9 @@ public class Sortering {
 		}
 	}
 	
-	public static <T extends Comparable<? super T>> void sorteringVedInnsetting2(T[] tabell, int forste, int siste) {
+	
+	//Oppgave 4d - private sortering ved innsetting som bare sorterer en gitt del av en tabell
+	private static <T extends Comparable<? super T>> void sorteringVedInnsetting2(T[] tabell, int forste, int siste) {
 		for(int i = forste + 1; i <= siste; i++) {
 			T nokkel = tabell[i];
 			int p = i;
@@ -164,7 +186,6 @@ public class Sortering {
 	private static <T extends Comparable<? super T>> void flette(T[] tabell, int start, int midten, int slutt) {
 		
 		int stor = slutt - start +1;
-		//T[] temp = (T[]) (new Comparable[tabell.length]);
 		T[] temp = (T[]) (new Comparable[stor]);
 		int forste1 = start;
 		int siste1 = midten;
@@ -213,7 +234,7 @@ public class Sortering {
 		
 		//KoeADT<Integer> koe = new SirkulaerKoeMedUnntak<Integer>();
 		SirkulaerKoeMedUnntak<Integer>[] sifferKoer = (SirkulaerKoeMedUnntak<Integer>[])(new SirkulaerKoeMedUnntak[10]);
-		//WTFWTFWTF
+		
 		
 		for(int sifferVerdi = 0; sifferVerdi <= 9; sifferVerdi++) {
 			sifferKoer[sifferVerdi] = new SirkulaerKoeMedUnntak<Integer>();
@@ -239,34 +260,6 @@ public class Sortering {
 		
 	}
 	
-	public static void radixSorteringBok(Integer[] tabell) {
-		String temp;
-		Integer tallObjekt;
-		int digit;
-		int num;
-		
-		Queue<Integer>[] digitQueues = (LinkedList<Integer>[])(new LinkedList[10]);
-		for(int digitVal = 0; digitVal <= 9; digitVal++) {
-			digitQueues[digitVal] = (Queue<Integer>)(new LinkedList<Integer>());
-		}
-		
-		for(int position = 0; position <= 3; position++) {
-			for(int scan = 0; scan < tabell.length; scan++) {
-				temp = String.valueOf(tabell[scan]);
-				digit = Character.digit(temp.charAt(3-position), 10);
-				digitQueues[digit].add(new Integer(tabell[scan]));
-			}
-			
-			num = 0;
-			for(int digitVal = 0; digitVal <= 9; digitVal++) {
-				while(!(digitQueues[digitVal].isEmpty())) {
-					tallObjekt = digitQueues[digitVal].remove();
-					tabell[num] = tallObjekt.intValue();
-					num++;
-				}
-			}
-		}
-	}
 	
 	
 	
@@ -276,5 +269,7 @@ public class Sortering {
 		tabell[indeks1] = tabell[indeks2];
 		tabell[indeks2] = temp;
 	}
-
+	
+	
+	
 }

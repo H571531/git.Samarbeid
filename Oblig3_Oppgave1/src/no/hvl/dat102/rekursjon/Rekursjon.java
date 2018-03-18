@@ -6,8 +6,8 @@ public class Rekursjon {
 		if(n==1) { //BasisSteg
 			return 1;
 		}else { //RekursivtSteg
-			return aritmetiskRekkeSum(n-1)+n; //Følger formel: Sn=Sn-1+n, for når S1=1
-		}//if
+			return aritmetiskRekkeSum(n-1)+n; //FÃ¸lger formel: Sn=Sn-1+n, for nÃ¥r S1=1
+		}//i
 	}//Method
 	
 	//Oppgave B
@@ -17,7 +17,7 @@ public class Rekursjon {
 		}else if(n==1) {//BasisTilfelle n=1
 			return 5;
 		}else {//RekursivtSteg
-			return 5*AritmetiskElement(n-1)-6*AritmetiskElement(n-2)+2; //Følger formelen An=5A_(n-1)-6A_(n-2)+2 
+			return 5*AritmetiskElement(n-1)-6*AritmetiskElement(n-2)+2; //FÃ¸lger formelen An=5A_(n-1)-6A_(n-2)+2 
 		}//if
 	}//method
 }//Class

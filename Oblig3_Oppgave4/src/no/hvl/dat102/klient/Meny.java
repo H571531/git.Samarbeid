@@ -14,11 +14,7 @@ public class Meny {
 	Integer[] tab5 = TabellTing.tilfeldigTabell(20);
 	Integer[] tab6 = TabellTing.tilfeldigTabellFireSifre(20);
 
-	/*
-	 * private final int INNSETTING = 1; private final int UTVALG = 2; private final
-	 * int BOBLE = 3; private final int QS = 4; private final int FLETTE = 5;
-	 * private final int RADIX = 6;
-	 */
+	
 
 	public void start() {
 
@@ -37,6 +33,8 @@ public class Meny {
 		System.out.println("5. Sorter tabell med flettesortering");
 		System.out.println("6. Sorter tabell med radix-sortering");
 		System.out.println("7. --- Sorter tabell med quicksort2 ---");
+		System.out.println("8. --- Sorter tabell med Innsetting3(med binærsøk) ---");
+		
 
 		valg1 = inn.nextInt();
 		inn.nextLine();
@@ -45,6 +43,7 @@ public class Meny {
 			System.out.println("1. Tabell med 32000");
 			System.out.println("2. Tabell med 64000");
 			System.out.println("3. Tabell med 128000");
+			System.out.println("Eller bare skriv n");
 			valg2 = inn.nextInt();
 			inn.nextLine();
 
@@ -58,7 +57,7 @@ public class Meny {
 			case 3:
 				storrelse = 128000;
 				break;
-			default:
+			default: storrelse = valg2;
 				
 			}
 
@@ -98,6 +97,9 @@ public class Meny {
 				bruktTid = SorteringsResultat.testSortering(sValg, tab6);
 				break;
 			case QS2:
+				bruktTid = SorteringsResultat.testSortering(sValg, tab1);
+				break;
+			case INNSETTING3:
 				bruktTid = SorteringsResultat.testSortering(sValg, tab1);
 				break;
 

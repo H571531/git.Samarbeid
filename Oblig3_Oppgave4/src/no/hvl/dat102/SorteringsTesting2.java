@@ -12,6 +12,10 @@ public class SorteringsTesting2 {
 		Integer[] tab4 = TabellTing.tilfeldigTabellSamme(20);
 		Integer[] tab5 = TabellTing.tilfeldigTabellSamme(20);
 		Integer[] tab6 = TabellTing.tilfeldigTabellFireSifre(20);
+		Integer[] tab7 = TabellTing.tilfeldigTabellSamme(20);
+		Integer[] tab8 = TabellTing.tilfeldigTabellSamme(20);
+		Integer[] tab9 = TabellTing.tilfeldigTabellSamme(1000);
+		Integer[] tab10 = TabellTing.tilfeldigTabellSamme(1000);
 		
 		System.out.println("tab 1:");
 		System.out.println(Arrays.toString(tab1));
@@ -60,6 +64,32 @@ public class SorteringsTesting2 {
 		System.out.println(Arrays.toString(tab6));
 		
 		lagMellomrom();
+		
+		System.out.println("tab 7:");
+		System.out.println(Arrays.toString(tab7));
+		System.out.println("Etter QS2:");
+		Sortering.kvikkSortering2(tab7);
+		System.out.println(Arrays.toString(tab7));
+		
+		lagMellomrom();
+		
+		System.out.println("tab 8:");
+		System.out.println(Arrays.toString(tab8));
+		System.out.println("Etter innsetting med binærsøk");
+		Sortering.SorteringVedInnsetting3(tab8);
+		System.out.println(Arrays.toString(tab8));
+		
+		lagMellomrom();
+		
+		long tid1 = System.nanoTime();
+		
+		Sortering.kvikkSortering2(tab10);
+		long tid2 = System.nanoTime();
+		Sortering.kvikkSortering(tab9);
+		long tid3 = System.nanoTime();
+		
+		System.out.println("Tid på QS: " + (tid2-tid1) + "\nTid på QS2: " + (tid3-tid2));
+		
 		
 
 	}

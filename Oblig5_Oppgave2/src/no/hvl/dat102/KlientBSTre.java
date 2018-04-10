@@ -16,7 +16,7 @@ class KlientBSTre{
   
   for(int i = 0; i < ANTALL_NODER; i++){
    Integer element = new Integer(tilfeldig.nextInt(30));
-   bs.leggTilElement(element);
+   bs.leggTil(element);
   }
   
   System.out.println("Treet med  " + ANTALL_NODER + " noder.");
@@ -69,6 +69,8 @@ class KlientBSTre{
        
   //****************************************************************************
 
+  	resultat=bs.TreHoyde();
+  		System.out.println("Hoyden til treet er:" +resultat);
   
  }
 }//class

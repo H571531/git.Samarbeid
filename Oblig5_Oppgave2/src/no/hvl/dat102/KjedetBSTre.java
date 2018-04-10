@@ -288,8 +288,21 @@ class KjedetBinaerSokeTre <T extends Comparable <T>> implements BSTreADT<T>, Ite
      visRekInorden(p.getHoyre());
   }
  }
-     
-   
+     /*******************************************************************
+      		returnerer hoyden av et binaert tre
+      ******************************************************************/
+ 	public int TreHoyde() {
+ 		return BSSTreHoydeRek(rot);
+ 	}
+ 	private int BSSTreHoydeRek(BinaerTreNode<T> t){
+ 		if(t==null) {
+ 			return -1;
+ 		}else {
+ 			return 1+Math.max(BSSTreHoydeRek(t.getHoyre()), BSSTreHoydeRek(t.getVenstre()));
+ 		}
+ 	}
+ 
+ 
 }//class
 
 

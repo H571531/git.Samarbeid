@@ -40,7 +40,7 @@ public class LabyrintSpill {
 		}
 
 		// Frivillig oppgave: Hvis det er sti gjennom labyrinten, marker siste pos som
-		// sti, og gå bakover langs alle posisjonene som ble gjennomgått
+		// sti, og ga bakover langs alle posisjonene som ble gjennomgatt
 		if (ferdig) {
 
 			while (pos != null) {

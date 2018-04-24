@@ -35,6 +35,7 @@ public class TabellHaug<T extends Comparable<? super T>> implements HaugADT<T> {
 
 	////////////////////////////
 	////////// Oppgave 3g
+	////////////////////////////
 
 	private void reparerOpp() {
 		// flytte siste opp til rett plass

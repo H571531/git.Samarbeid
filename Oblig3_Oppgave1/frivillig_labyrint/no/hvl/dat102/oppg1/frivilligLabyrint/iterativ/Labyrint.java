@@ -71,7 +71,7 @@ public class Labyrint {
 		String resultat = "\n";
 		for (int rekke = 0; rekke < gridd.length; rekke++) {
 			for (int kolonne = 0; kolonne < gridd[rekke].length; kolonne++) {
-				resultat += gridd[rekke][kolonne] + "";
+				resultat += gridd[rekke][kolonne] + " ";
 			}
 			resultat += "\n";
 		}

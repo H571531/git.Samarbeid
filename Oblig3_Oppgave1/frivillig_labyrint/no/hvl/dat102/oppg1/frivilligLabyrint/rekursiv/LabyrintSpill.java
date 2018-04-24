@@ -20,7 +20,7 @@ public class LabyrintSpill {
 			else{
 				ferdig = gjennomgaa(rekke+1, kolonne);     // ned
 				if(!ferdig){
-					ferdig = gjennomgaa(rekke,kolonne+1);  // h�yre
+					ferdig = gjennomgaa(rekke,kolonne+1);  // hoyre
 				}
 				if(!ferdig){
 					ferdig = gjennomgaa(rekke-1,kolonne);  // opp

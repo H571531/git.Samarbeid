@@ -1,15 +1,22 @@
 package no.hvl.dat100.klient;
 
-import no.hvl.dat100.sorteringog.*;
 import java.util.Random;
+
+import no.hvl.dat100.sorteringog.Sortering;
 
 
 public class Klient {
 
 	public static void main(String[] args) {
+		int elementer=9000;
+		//if(!args.equals(null))elementer=Integer.parseInt(args[0]);
 		// TODO Auto-generated method stub
-		Integer[] innsetting=lagtilfeldig(20);
-		Integer[] binerinnsetting=lagtilfeldig(20);
+		
+		
+		Integer[] innsetting=lagtilfeldig(elementer);
+		Integer[] binerinnsetting=innsetting;
+		
+		
 		
 		long tid1 = System.nanoTime();
 			Sortering.sorteringVedInnsetting(innsetting);
@@ -21,17 +28,28 @@ public class Klient {
 		tid2=System.nanoTime()-tid2;
 		
 		
+		
+		/*
+		long tid1 = System.nanoTime();
+		Sortering.BinaryInsertionSort(innsetting);
+		tid1=System.nanoTime()-tid1;
+	
+		
+		long tid2 = System.nanoTime();
+			Sortering.sorteringVedInnsetting(binerinnsetting);
+		tid2=System.nanoTime()-tid2;
+		*/
+		
+		
+		
+		System.out.println("Sorterer "+elementer+" elementer.");
 		System.out.print("Vanlig sortering ved insetting: \nSortert: ");
-			printTabell(innsetting);
+			//printTabell(innsetting);
 		System.out.print("Brukte: "+tid1/1000+"uS\n");
 		
 		System.out.print("Sortering ved insetting med binærsøk: \nSortert: ");
-			printTabell(binerinnsetting);
+			//printTabell(binerinnsetting);
 		System.out.print("Brukte: "+tid2/1000+"uS\n");
-	
-			
-		
-		
 		
 	}
 

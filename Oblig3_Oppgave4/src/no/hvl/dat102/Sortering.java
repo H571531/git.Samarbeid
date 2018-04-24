@@ -243,7 +243,6 @@ public class Sortering {
 		for(int posisjon = 0; posisjon <= 3; posisjon++) {
 			for(int i = 0; i < tabell.length; i++) {
 				temp = String.valueOf(tabell[i]);
-				//System.out.println(temp);
 				siffer = Character.digit(temp.charAt(3-posisjon), 10);
 				sifferKoer[siffer].innKoe(new Integer(tabell[i]));
 			}

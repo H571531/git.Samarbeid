@@ -49,7 +49,7 @@ public class KjedetBinaertSokeTreADTTest {
      @Test
     public final void erBSTreOrdnet() { 
      /* Her legge du først inn e0...e6 i en vilkårlig rekkefølge
-      * og så fjerne du minste hele tiden               
+      * og så fjerne du minste hele tiden   */            
    }
      
     /**

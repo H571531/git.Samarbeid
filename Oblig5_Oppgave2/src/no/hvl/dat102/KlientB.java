@@ -26,31 +26,31 @@ public class KlientB {
 			gjHoyde=gjHoyde+TestTre.TreHoyde();
 			
 			//System.out.println("Antall noder: "+storrelse);
-			//System.out.println("Teoretisk Min høyde: "+TeoretiskMinHoyde);
-			//System.out.println("Teoretisk Maks høyde: "+TeoretiskMaksHoyde);
-			//System.out.println("Høyden er: "+TestTre.TreHoyde());
+			//System.out.println("Teoretisk Min hï¿½yde: "+TeoretiskMinHoyde);
+			//System.out.println("Teoretisk Maks hï¿½yde: "+TeoretiskMaksHoyde);
+			//System.out.println("Hï¿½yden er: "+TestTre.TreHoyde());
 			//System.out.println("---------------------------------------");
 		}
 		System.out.println("---------------------------------------");
-		System.out.println("For alle trær i målingen: ");
+		System.out.println("For alle trÃ¦r i mÃ¥lingen: ");
 		System.out.println("Antall noder: "+storrelse);
-		System.out.println("Teoretisk Min høyde: "+TeoretiskMinHoyde);
-		System.out.println("Teoretisk Maks høyde: "+TeoretiskMaksHoyde);
+		System.out.println("Teoretisk Min hÃ¸yde: "+TeoretiskMinHoyde);
+		System.out.println("Teoretisk Maks hÃ¸yde: "+TeoretiskMaksHoyde);
 		System.out.println("---------------------------------------");
-		System.out.println("Antall trær: "+n);
-		System.out.println("Antall noder i trærne: "+storrelse);
-		System.out.println("Minste funnet høyde: "+minsteHoyde);
-		System.out.println("Storste funnet høyde: "+storsteHoyde);
-		System.out.println("Gjennomsnitt høyde for "+n+" antall(hoydetot/antall): "+(gjHoyde/n));
+		System.out.println("Antall trï¿½r: "+n);
+		System.out.println("Antall noder i trÃ¦rne: "+storrelse);
+		System.out.println("Minste funnet hÃ¸yde: "+minsteHoyde);
+		System.out.println("Storste funnet hÃ¸yde: "+storsteHoyde);
+		System.out.println("Gjennomsnitt hÃ¸yde for "+n+" antall(hoydetot/antall): "+(gjHoyde/n));
 		c=(gjHoyde/n)/((Math.log(storrelse)/Math.log(2)));
 		System.out.println("---------------------------------------");
-		System.out.println("Oppgave C\nFor alle trær i målingen med n=4096:  ");
+		System.out.println("Oppgave C\nFor alle trï¿½r i mï¿½lingen med n=4096:  ");
 		System.out.println("Antall noder: "+storrelseto);
-		System.out.println("Teoretisk Min høyde: "+teoretiskMinsteHoyde(4096));
-		System.out.println("Teoretisk Maks høyde: "+(storrelseto-1));
+		System.out.println("Teoretisk Min hÃ¸yde: "+teoretiskMinsteHoyde(4096));
+		System.out.println("Teoretisk Maks hÃ¸yde: "+(storrelseto-1));
 		System.out.println("--------------------------------------- ");
 		System.out.println("C=h/log_2 n =" + c);
-		System.out.println("Antatt gjennomsnitt for "+storrelseto+" elementer vil da være: "+(c*(Math.log(storrelseto)/Math.log(2))));
+		System.out.println("Antatt gjennomsnitt for "+storrelseto+" elementer vil da vÃ¦re: "+(c*(Math.log(storrelseto)/Math.log(2))));
 		gjHoyde=0;
 		for(int i=0; i<n; i++) {
 			TestTre=tilfeldigTre(storrelseto);
@@ -60,7 +60,7 @@ public class KlientB {
 			gjHoyde=gjHoyde+TestTre.TreHoyde();
 		
 		}
-		System.out.println("Gjennomsnitt høyde for "+storrelseto+" antall elementer i "+n+" trær er målt til: "+(gjHoyde/n));
+		System.out.println("Gjennomsnitt hÃ¸yde for "+storrelseto+" antall elementer i "+n+" trÃ¦r er mÃ¥lt til: "+(gjHoyde/n));
 	}
 
 	

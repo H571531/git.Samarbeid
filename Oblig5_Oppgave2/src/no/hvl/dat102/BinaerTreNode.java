@@ -2,14 +2,14 @@ package no.hvl.dat102;
 
 
 //*******************************************************************
-//  BinærTreNode.java               
+//  Binï¿½rTreNode.java               
 //
-//  Representerer en node i et binært tre.
+//  Representerer en node i et binï¿½rt tre.
 //*******************************************************************
 
 public class BinaerTreNode<T> {
    private T element;
-   private BinaerTreNode<T> venstre, høyre;
+   private BinaerTreNode<T> venstre, hÃ¸yre;
 
    
    
@@ -19,7 +19,7 @@ public class BinaerTreNode<T> {
    BinaerTreNode (T el) {
       element   = el;
       venstre   = null;
-      høyre     = null;
+      hÃ¸yre     = null;
    }
          
    /******************************************************************/
@@ -32,7 +32,7 @@ public class BinaerTreNode<T> {
  }
  
  public BinaerTreNode<T> getHoyre(){
-  return høyre;
+  return hÃ¸yre;
  }
  
  public void setVenstre(BinaerTreNode<T> ny){
@@ -40,7 +40,7 @@ public class BinaerTreNode<T> {
  }
  
  public void setHoyre(BinaerTreNode<T> ny){
-  høyre = ny;
+  hÃ¸yre = ny;
  }
  
  public T getElement(){
@@ -59,8 +59,8 @@ public class BinaerTreNode<T> {
       if (venstre != null)
          barn = 1 + venstre.antallBarn();
 
-      if (høyre != null)
-         barn = barn + 1 + høyre.antallBarn();
+      if (hÃ¸yre != null)
+         barn = barn + 1 + hÃ¸yre.antallBarn();
 
       return barn;
    }
